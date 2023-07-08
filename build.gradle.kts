@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.github.otr"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -29,6 +29,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// Social network
+//	runtimeOnly("com.mysql:mysql-connector-j")
+
+	// the new boston
+//	testImplementation("io.mockk:mockk:1.13.4")
 }
 
 tasks.withType<KotlinCompile> {
@@ -40,4 +46,9 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+
+	// the new boston
+	testLogging {
+		showStandardStreams = true
+	}
 }
