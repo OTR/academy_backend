@@ -14,7 +14,7 @@ interface DeletePLCByIDInterface {
 }
 
 /**
- * Delete PLC means delete all the posts, likes and comments
+ * Delete PLC means deleteById all the posts, likes and comments
  * that belong to a particular profile (user)
  */
 @Repository

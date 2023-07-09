@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest
  * POST /api/text/new create a new text with fields supplied as JSON in request body
  * PUT /api/text/{id} update a text by the given ID with fields supplied as JSON
  *                in request body
- * DELETE /api/text/{id} delete a text by the given ID
+ * DELETE /api/text/{id} deleteById a text by the given ID
  */
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -152,7 +152,7 @@ class RestControllerTest {
 //
 //    @Test
 //    @DirtiesContext
-//    @DisplayName("DELETE $baseApiUrl/{id} delete a text by the given ID")
+//    @DisplayName("DELETE $baseApiUrl/{id} deleteById a text by the given ID")
 //    fun testDeleteTextEntityById(){
 //        // GIVEN | Assume there is a text entity in the database
 //        mockMvc.post("$baseApiUrl/new") {
@@ -160,7 +160,7 @@ class RestControllerTest {
 //            content = textSampleJson
 //        }
 //        // WHEN | Deleting that text entity by ID
-//        mockMvc.delete("$baseApiUrl/$textId")
+//        mockMvc.deleteById("$baseApiUrl/$textId")
 //            // THEN | Expect that there is no entity by the given ID
 //            //        and database is empty
 //            .andExpect { status { isNoContent() } }

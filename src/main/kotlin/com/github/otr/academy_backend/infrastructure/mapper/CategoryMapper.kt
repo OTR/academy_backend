@@ -3,9 +3,12 @@ package com.github.otr.academy_backend.infrastructure.mapper
 import com.github.otr.academy_backend.infrastructure.database.dbo.CategoryEntity
 import com.github.otr.academy_backend.domain.model.Category
 
+import org.springframework.stereotype.Component
+
 /**
  *
  */
+@Component
 class CategoryMapper {
 
     fun mapDboToDomain(dbModel: CategoryEntity): Category {

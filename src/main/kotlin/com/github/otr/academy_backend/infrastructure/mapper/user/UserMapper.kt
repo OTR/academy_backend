@@ -6,11 +6,14 @@ import com.github.otr.academy_backend.infrastructure.controller.form.CreateUserD
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import org.springframework.stereotype.Component
 import java.time.LocalDate
 
 /**
  *
  */
+@Component
 class UserMapper {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
@@ -51,7 +54,7 @@ class UserMapper {
                 accCreatedTime = LocalDate.now()
             )
         } else {
-            logger.debug("Some of form fields are null")
+            logger.info("Some of form fields are null")
             null
         }
 

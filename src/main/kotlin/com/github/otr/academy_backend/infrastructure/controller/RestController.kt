@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
  * POST /api/text/new create a new text with fields supplied as JSON in request body
  * PUT /api/text/{id} update a text by the given ID with fields supplied as JSON
  *                in request body
- * DELETE /api/text/{id} delete a text by the given ID
+ * DELETE /api/text/{id} deleteById a text by the given ID
  */
 @RestController
 class RestController {

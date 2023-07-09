@@ -13,6 +13,6 @@ interface GenericRepository <T> {
 
     fun update(entity: T): T
 
-    fun delete(id: Int)
+    fun deleteById(id: Int)
 
 }

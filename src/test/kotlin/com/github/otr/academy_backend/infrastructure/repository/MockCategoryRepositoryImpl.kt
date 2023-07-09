@@ -28,7 +28,7 @@ class MockCategoryRepositoryImpl: CategoryRepository {
         TODO("Not yet implemented")
     }
 
-    override fun delete(id: Int) {
+    override fun deleteById(id: Int) {
         TODO("Not yet implemented")
     }
 }

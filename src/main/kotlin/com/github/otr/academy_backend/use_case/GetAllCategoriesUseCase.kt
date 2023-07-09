@@ -1,7 +1,7 @@
 package com.github.otr.academy_backend.use_case
 
 import com.github.otr.academy_backend.domain.model.Category
-import com.github.otr.academy_backend.domain.repository.GenericRepository
+import com.github.otr.academy_backend.domain.repository.CategoryRepository
 
 import org.springframework.stereotype.Service
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
  */
 @Service
 class GetAllCategoriesUseCase(
-    private val repository: GenericRepository<Category>
+    private val repository: CategoryRepository
 ) {
 
     operator fun invoke(): List<Category> {

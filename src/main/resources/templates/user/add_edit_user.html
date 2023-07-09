@@ -14,25 +14,31 @@
                   enctype="application/x-www-form-urlencoded">
                 <div class="form-group">
                     <input type="hidden" name="id" value="1"/>
-                    <label id="userName" class="form-label">First name:</label>
+                    <label id="userName" class="form-label">Username:</label>
                     <textarea
-                            th:field="*{firstName}"
+                            th:field="*{userName}"
                             class="form-control"
-                            name="userName"
-                            rows="6"
-                            readonly>
-                        First Name
+                            name="userName">
+                        UserName
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label id="email" class="form-label">
-                        Email:
-                    </label>
+                    <input type="hidden" name="id" value="1"/>
+                    <label id="firstName" class="form-label">First name:</label>
+                    <textarea
+                            th:field="*{firstName}"
+                            class="form-control"
+                            name="firstName">
+                        First Name
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label id="email" class="form-label">Email:</label>
                     <textarea
                             th:field="*{email}"
                             class="form-control"
-                            name="email"
-                            rows="6">
+                            name="email">
                         Email
                     </textarea>
                     <small id="send_corrected" class="form-text text-muted">

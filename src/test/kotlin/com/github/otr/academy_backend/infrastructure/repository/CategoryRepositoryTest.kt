@@ -130,7 +130,7 @@ class CategoryRepositoryTest {
 //        // THEN 1 | Assert that it exists
 //        assertThat(allEntities.size).isEqualTo(1)
 //        assertThat(currentEntity.unformattedText).isEqualTo(unformattedText)
-//        // WHEN 2 | Then delete entity from the repository
+//        // WHEN 2 | Then deleteById entity from the repository
 //        textRepository.deleteById(textId)
 //        // THEN 2 | Assert that there is no entity with the given Id
 //        //          and repository is empty
