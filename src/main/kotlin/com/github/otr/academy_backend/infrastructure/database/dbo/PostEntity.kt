@@ -1,4 +1,4 @@
-package com.github.otr.academy_backend.infrastructure.database.model
+package com.github.otr.academy_backend.infrastructure.database.dbo
 
 /**
  *

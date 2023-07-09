@@ -1,13 +1,13 @@
-package com.github.otr.academy_backend.infrastructure.database.model
+package com.github.otr.academy_backend.infrastructure.database.dbo
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 
 /**
- *
+ * TODO: No args constructor?
  */
 @Entity
-class CategoryModel(
+class CategoryEntity(
 
     @Id
     val id: Int = 0,

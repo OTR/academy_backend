@@ -1,4 +1,4 @@
-package com.github.otr.academy_backend.infrastructure.database.model
+package com.github.otr.academy_backend.infrastructure.database.dbo
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -10,7 +10,7 @@ import java.time.LocalDate
  *
  */
 @Entity
-class UserModel(
+class UserEntity(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
