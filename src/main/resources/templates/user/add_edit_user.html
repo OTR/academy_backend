@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{fragments/header}"/>
+<body>
+<th:block th:replace="~{fragments/navbar}"/>
+<!-- Actual content starts here -->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>User #[[${userId} ? ${UserId} : '42']]</h3>
+            <form th:action="${@environment.getProperty('path.profile')}"
+                  th:object="${user}"
+                  method="POST"
+                  enctype="application/x-www-form-urlencoded">
+                <div class="form-group">
+                    <input type="hidden" name="id" value="1"/>
+                    <label id="userName" class="form-label">Username:</label>
+                    <textarea
+                            th:field="*{userName}"
+                            class="form-control"
+                            name="userName">
+                        UserName
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="id" value="1"/>
+                    <label id="firstName" class="form-label">First name:</label>
+                    <textarea
+                            th:field="*{firstName}"
+                            class="form-control"
+                            name="firstName">
+                        First Name
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label id="email" class="form-label">Email:</label>
+                    <textarea
+                            th:field="*{email}"
+                            class="form-control"
+                            name="email">
+                        Email
+                    </textarea>
+                    <small id="send_corrected" class="form-text text-muted">
+                        Send corrected user info.
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Actual content ends here -->
+<th:block th:replace="~{fragments/footer}"/>
+</body>
+</html>
