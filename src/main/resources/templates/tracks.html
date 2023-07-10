@@ -6,19 +6,23 @@
 <!-- Actual content starts here -->
 <div class="container">
     <div th:each="category: ${categories}" class="row">
-        <div class="col-12 p-1">
-            <div class="card">
-                <div class="card-header">
-                    <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}">
-                        Category #[[${category.id}]]
-                    </a>
-                </div>
-                <div class="card-body">
-                    <span>[[${category.id} ? ${category.id}]]</span>
-                    <span>[[${category.title} ? ${category.title}]]</span>
-                    <span>[[${category.description} ? ${category.description}]]</span>
-                </div>
+        <div class="row">
+            <div class="col-12 p-1">
+                <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}"
+                   class="btn btn-outline-dark" role="button">[[${category.title}]]</a>
             </div>
+            <!--            <div class="card">-->
+            <!--                <div class="card-header">-->
+            <!--                    <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}">-->
+            <!--                        Category #[[${category.id}]]-->
+            <!--                    </a>-->
+            <!--                </div>-->
+            <!--                <div class="card-body">-->
+            <!--                    <span>[[${category.id} ? ${category.id}]]</span>-->
+            <!--                    <span>[[${category.title} ? ${category.title}]]</span>-->
+            <!--                    <span>[[${category.description} ? ${category.description}]]</span>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 </div>
