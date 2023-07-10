@@ -39,9 +39,14 @@ class HtmlCategoryController(
         model: Model
     ): String {
         logger.info("Category ID is: $categoryId") // TODO: Delete me
-        model["title"] = environment.getProperty(TRACKS_TITLE_KEY, DEFAULT_TITLE)
+
         val categories: List<Category> = getAllCategoriesUseCase()
+//        val currTracks: List<Track> = getTracksByCategoryId(categoryId)
+
+        model["title"] = environment.getProperty(TRACKS_TITLE_KEY, DEFAULT_TITLE)
+        model["currCategoryId"] = categoryId
         model["categories"] = categories
+//        model["currTracks"] = currTracks
         return "tracks"
     }
 

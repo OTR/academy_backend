@@ -5,24 +5,40 @@
 <th:block th:replace="~{fragments/navbar}"/>
 <!-- Actual content starts here -->
 <div class="container">
-    <div th:each="category: ${categories}" class="row">
-        <div class="row">
-            <div class="col-12 p-1">
-                <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}"
-                   class="btn btn-outline-dark" role="button">[[${category.title}]]</a>
+    <!-- Display buttons (chips) with category titles -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <span th:each="category: ${categories}">
+                <!-- If selected make it primary -->
+                <a th:href="${@environment.getProperty('path.tracks')} + '?category=' + ${category.id}"
+                   th:if="${currCategoryId == category.id}"
+                   class="btn btn-primary"
+                   role="button">[[${category.title}]]</a>
+                <!-- otherwise make in dark -->
+                <a th:href="${@environment.getProperty('path.tracks')} + '?category=' + ${category.id}"
+                   th:unless="${currCategoryId == category.id}"
+                   class="btn btn-outline-dark"
+                   role="button">[[${category.title}]]</a>
+            </span>
+        </div>
+    </div>
+    <!-- Display tracks for each category -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <div th:each="category: ${categories}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}">
+                            Category #[[${category.id}]]
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${category.id} ? ${category.id}]]</span>
+                        <span>[[${category.title} ? ${category.title}]]</span>
+                        <span>[[${category.description} ? ${category.description}]]</span>
+                    </div>
+                </div>
             </div>
-            <!--            <div class="card">-->
-            <!--                <div class="card-header">-->
-            <!--                    <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}">-->
-            <!--                        Category #[[${category.id}]]-->
-            <!--                    </a>-->
-            <!--                </div>-->
-            <!--                <div class="card-body">-->
-            <!--                    <span>[[${category.id} ? ${category.id}]]</span>-->
-            <!--                    <span>[[${category.title} ? ${category.title}]]</span>-->
-            <!--                    <span>[[${category.description} ? ${category.description}]]</span>-->
-            <!--                </div>-->
-            <!--            </div>-->
         </div>
     </div>
 </div>
