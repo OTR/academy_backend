@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestParam
 
 /**
  *
@@ -27,14 +27,18 @@ class HtmlCategoryController(
     companion object {
         private const val DEFAULT_TITLE: String = "Default Title"
         private const val TRACKS_TITLE_KEY: String = "title.tracks"
+        private const val ALL_TRACKS_CATEGORY_ID: Int = 8
     }
 
-    @GetMapping(path=["/tracks?category={category_id}"])
+    @GetMapping(path=["/tracks"])
     fun getTracksPage(
-        model: Model,
-        @PathVariable("category_id") categoryId: Int
+        @RequestParam(
+            name = "category",
+            defaultValue = ALL_TRACKS_CATEGORY_ID.toString()
+        ) categoryId: Int,
+        model: Model
     ): String {
-        logger.info("Category ID is: $categoryId")
+        logger.info("Category ID is: $categoryId") // TODO: Delete me
         model["title"] = environment.getProperty(TRACKS_TITLE_KEY, DEFAULT_TITLE)
         val categories: List<Category> = getAllCategoriesUseCase()
         model["categories"] = categories
