@@ -1,7 +1,9 @@
 package com.github.otr.academy_backend.infrastructure.controller
 
 import com.github.otr.academy_backend.domain.model.Category
+import com.github.otr.academy_backend.domain.model.Track
 import com.github.otr.academy_backend.use_case.GetAllCategoriesUseCase
+import com.github.otr.academy_backend.use_case.GetTracksByCategoryIdUseCase
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -19,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam
 @Controller
 class HtmlCategoryController(
     private val environment: Environment,
-    private val getAllCategoriesUseCase: GetAllCategoriesUseCase
+    private val getAllCategoriesUseCase: GetAllCategoriesUseCase,
+    private val getTracksByCategoryIdUseCase: GetTracksByCategoryIdUseCase
 ) {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
@@ -41,12 +44,12 @@ class HtmlCategoryController(
         logger.info("Category ID is: $categoryId") // TODO: Delete me
 
         val categories: List<Category> = getAllCategoriesUseCase()
-//        val currTracks: List<Track> = getTracksByCategoryId(categoryId)
+        val currTracks: List<Track> = getTracksByCategoryIdUseCase(categoryId)
 
         model["title"] = environment.getProperty(TRACKS_TITLE_KEY, DEFAULT_TITLE)
         model["currCategoryId"] = categoryId
         model["categories"] = categories
-//        model["currTracks"] = currTracks
+        model["currTracks"] = currTracks
         return "tracks"
     }
 

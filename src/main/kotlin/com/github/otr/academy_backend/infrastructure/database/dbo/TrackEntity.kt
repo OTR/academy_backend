@@ -2,22 +2,25 @@ package com.github.otr.academy_backend.infrastructure.database.dbo
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
-import jakarta.persistence.JoinTable
 import jakarta.persistence.ManyToMany
 import jakarta.persistence.Table
 
 /**
- * TODO: No args constructor?
+ *
  */
 @Entity
-@Table(name = "categories")
-class CategoryEntity(
-    @Id val id: Int = 0,
+@Table(name="tracks")
+data class TrackEntity(
 
-    @ManyToMany
-    @JoinTable(name = "categories_to_tracks")
-    val tracks: List<TrackEntity>,
+    @Id val id: Int,
+
+    @ManyToMany(mappedBy = "tracks")
+    val categories: List<CategoryEntity>,
 
     val title: String,
     val description: String,
+    val longDescription: String,
+    val isBeta: Boolean,
+    val isFree: Boolean,
+    val isPublic: Boolean,
 )

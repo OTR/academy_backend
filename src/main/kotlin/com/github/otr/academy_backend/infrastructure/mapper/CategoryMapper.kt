@@ -2,6 +2,7 @@ package com.github.otr.academy_backend.infrastructure.mapper
 
 import com.github.otr.academy_backend.infrastructure.database.dbo.CategoryEntity
 import com.github.otr.academy_backend.domain.model.Category
+import com.github.otr.academy_backend.domain.model.Track
 
 import org.springframework.stereotype.Component
 
@@ -17,11 +18,13 @@ class CategoryMapper {
             title = dbModel.title,
             description = dbModel.description
         )
+        val x: List<Track> = dbModel.tracks.map { TrackMapper().mapDboToDomain(it) } // TODO:
     }
 
     fun mapDomainToDbo(entity: Category): CategoryEntity {
         return CategoryEntity(
             id = entity.id,
+            tracks = emptyList(), // TODO: Fix me
             title = entity.title,
             description = entity.description
         )

@@ -1,6 +1,7 @@
 package com.github.otr.academy_backend.infrastructure.repository
 
 import com.github.otr.academy_backend.domain.model.Category
+import com.github.otr.academy_backend.domain.model.Track
 import com.github.otr.academy_backend.domain.repository.CategoryRepository
 
 
@@ -11,6 +12,10 @@ import org.springframework.stereotype.Repository
  */
 @Repository
 class MockCategoryRepositoryImpl: CategoryRepository {
+
+    override fun getAllTracksByCategoryId(categoryId: Int): List<Track> {
+        TODO("Not yet implemented")
+    }
 
     override fun getAll(): List<Category> {
         TODO("Not yet implemented")

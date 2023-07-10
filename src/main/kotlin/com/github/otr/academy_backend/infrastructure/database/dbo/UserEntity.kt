@@ -19,13 +19,8 @@ class UserEntity(
     val id: Int? = 0,
 
     val userName: String,
-
     val email: String,
-
     val password: String,
-
     val firstName: String,
-
     val accCreatedTime: LocalDate,
-
 )
