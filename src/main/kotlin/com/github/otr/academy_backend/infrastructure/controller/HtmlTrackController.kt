@@ -1,7 +1,7 @@
 package com.github.otr.academy_backend.infrastructure.controller
 
 import com.github.otr.academy_backend.domain.model.Track
-import com.github.otr.academy_backend.use_case.GetTrackDetailsByIdUseCase
+import com.github.otr.academy_backend.use_case.track.GetTrackDetailsByIdUseCase
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

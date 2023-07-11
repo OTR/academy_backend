@@ -1,4 +1,4 @@
-package com.github.otr.academy_backend.use_case
+package com.github.otr.academy_backend.use_case.track
 
 import com.github.otr.academy_backend.domain.model.Track
 import com.github.otr.academy_backend.domain.repository.TrackRepository

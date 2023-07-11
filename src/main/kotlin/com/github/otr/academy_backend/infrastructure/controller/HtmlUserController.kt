@@ -3,7 +3,7 @@ package com.github.otr.academy_backend.infrastructure.controller
 import com.github.otr.academy_backend.domain.model.User
 import com.github.otr.academy_backend.infrastructure.controller.form.CreateUserDataForm
 import com.github.otr.academy_backend.infrastructure.mapper.user.UserMapper
-import com.github.otr.academy_backend.use_case.CreateUserUseCase
+import com.github.otr.academy_backend.use_case.user.CreateUserUseCase
 
 import org.springframework.core.env.Environment
 import org.springframework.http.MediaType

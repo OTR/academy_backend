@@ -2,8 +2,8 @@ package com.github.otr.academy_backend.infrastructure.controller
 
 import com.github.otr.academy_backend.domain.model.Category
 import com.github.otr.academy_backend.domain.model.Track
-import com.github.otr.academy_backend.use_case.GetAllCategoriesUseCase
-import com.github.otr.academy_backend.use_case.GetTracksByCategoryIdUseCase
+import com.github.otr.academy_backend.use_case.category.GetAllCategoriesUseCase
+import com.github.otr.academy_backend.use_case.category.GetTracksByCategoryIdUseCase
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
