@@ -16,3 +16,4 @@ out/
 
 # Application local data
 .app_data
+/src/main/resources/data.sql

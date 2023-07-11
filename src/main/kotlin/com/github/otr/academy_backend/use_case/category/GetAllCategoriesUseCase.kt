@@ -1,4 +1,4 @@
-package com.github.otr.academy_backend.use_case
+package com.github.otr.academy_backend.use_case.category
 
 import com.github.otr.academy_backend.domain.model.Category
 import com.github.otr.academy_backend.domain.repository.CategoryRepository

@@ -9,19 +9,20 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class CategoryMapper {
+class CategoryMapper : Mapper<Category, CategoryEntity> {
 
-    fun mapDboToDomain(dbModel: CategoryEntity): Category {
+    override fun mapDboToDomain(entity: CategoryEntity): Category {
         return Category(
-            id = dbModel.id,
-            title = dbModel.title,
-            description = dbModel.description
+            id = entity.id,
+            title = entity.title,
+            description = entity.description
         )
     }
 
-    fun mapDomainToDbo(entity: Category): CategoryEntity {
+    override fun mapDomainToDbo(entity: Category): CategoryEntity {
         return CategoryEntity(
             id = entity.id,
+            tracks = emptyList(), // TODO: Fix me
             title = entity.title,
             description = entity.description
         )
