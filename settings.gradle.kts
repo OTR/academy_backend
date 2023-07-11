@@ -7,3 +7,6 @@ pluginManagement {
 }
 
 rootProject.name = "academy_backend"
+include(":core")
+include(":spring_backend")
+include(":scraper")
