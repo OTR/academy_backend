@@ -29,13 +29,11 @@
                 <div class="card">
                     <div class="card-header">
                         <a th:href="${@environment.getProperty('path.tracks')} + '/' + ${track.id}">
-                            Track #[[${track.id}]]
+                            <h2>[[${track.title} ? ${track.title}]]</h2><span> (#[[${track.id}]])</span>
                         </a>
                     </div>
                     <div class="card-body">
-                        <span>[[${track.title} ? ${track.description}]]</span>
                         <span>[[${track.description} ? ${track.description}]]</span>
-                        <span>[[${track.longDescription} ? ${track.longDescription}]]</span>
                     </div>
                 </div>
             </div>

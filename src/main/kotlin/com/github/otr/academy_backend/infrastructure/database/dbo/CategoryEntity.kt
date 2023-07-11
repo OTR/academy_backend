@@ -15,7 +15,7 @@ class CategoryEntity(
     @Id val id: Int = 0,
 
     @ManyToMany
-    @JoinTable(name = "categories_to_tracks")
+    @JoinTable(name = "categories_to_tracks") // TODO: Make Pk1 and Pk2 unique together
     val tracks: List<TrackEntity>,
 
     val title: String,
