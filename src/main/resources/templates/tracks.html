@@ -25,17 +25,17 @@
     <!-- Display tracks for each category -->
     <div class="row">
         <div class="col-12 p-1">
-            <div th:each="category: ${categories}">
+            <div th:each="track: ${currTracks}">
                 <div class="card">
                     <div class="card-header">
-                        <a th:href="${@environment.getProperty('path.category')} + '/' + ${category.id}">
-                            Category #[[${category.id}]]
+                        <a th:href="${@environment.getProperty('path.tracks')} + '/' + ${track.id}">
+                            Track #[[${track.id}]]
                         </a>
                     </div>
                     <div class="card-body">
-                        <span>[[${category.id} ? ${category.id}]]</span>
-                        <span>[[${category.title} ? ${category.title}]]</span>
-                        <span>[[${category.description} ? ${category.description}]]</span>
+                        <span>[[${track.title} ? ${track.description}]]</span>
+                        <span>[[${track.description} ? ${track.description}]]</span>
+                        <span>[[${track.longDescription} ? ${track.longDescription}]]</span>
                     </div>
                 </div>
             </div>
