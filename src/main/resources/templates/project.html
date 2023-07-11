@@ -9,9 +9,10 @@
     <div class="row">
         <div class="col-12 p-1">
             <h4>
-                <span class="badge text-bg-secondary">Track</span>
-                <span class="badge text-bg-dark">Free</span>
-                <span class="badge text-bg-warning">Beta</span>
+                <span class="badge text-bg-secondary">Beta</span>
+                <span class="badge text-bg-dark">Template Based</span>
+                <span class="badge text-bg-warning">Use IDE</span>
+                <span class="badge text-bg-warning">Public</span>
             </h4>
         </div>
     </div>
@@ -24,14 +25,24 @@
     <!-- Display description for a track -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>[[${track.description}]]</p>
+            <h3>Learning outcomes:</h3>
+            <p>[[${project.description}]]</p>
         </div>
     </div>
     <!-- Display long description for a track -->
     <div class="row">
         <div class="col-12 p-1">
-            <h3>What you'll do:</h3>
-            <p>[(${track.longDescription})]</p>
+            <h3>About:</h3>
+            <p>[(${project.longDescription})]</p>
+        </div>
+    </div>
+    <!-- What you'll do and what you'll learn: -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <h3>What you'll do and what you'll learn:</h3>
+        </div>
+        <div class="col-12 p-1">
+        <!-- For stage in stages: -->
         </div>
     </div>
 </div>
