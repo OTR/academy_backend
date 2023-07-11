@@ -8,6 +8,7 @@ import com.github.otr.academy_backend.infrastructure.database.dbo.TrackEntity
 import com.github.otr.academy_backend.infrastructure.database.dbo.TrackToProjectEntity
 import com.github.otr.academy_backend.infrastructure.mapper.TrackMapper
 import com.github.otr.academy_backend.infrastructure.mapper.project.ProjectMapper
+import com.github.otr.academy_backend.infrastructure.repository.BaseRepository
 
 import org.springframework.stereotype.Component
 
@@ -19,7 +20,7 @@ class TrackRepositoryImpl(
     private val repository: JpaTrackRepository,
     private val mapper: TrackMapper,
     private val projectMapper: ProjectMapper
-) : TrackRepository {
+) : TrackRepository, BaseRepository<Track, TrackEntity>(repository, mapper) {
 
     companion object {
         private const val EASY_PROJECT_KEY: String = "easy"
@@ -68,32 +69,6 @@ class TrackRepositoryImpl(
             betaProjects = betaProjects,
             capstoneProjects = capstoneProjects
         )
-    }
-
-    override fun getAll(): List<Track> {
-        return repository.findAll().map {
-            mapper.mapDboToDomain(it)
-        }
-    }
-
-    override fun getById(id: Int): Track {
-        return repository.findById(id).orElseThrow().let {
-            mapper.mapDboToDomain(it)
-        }
-    }
-
-    override fun create(entity: Track): Track {
-        return repository.save(mapper.mapDomainToDbo(entity)).let {
-            mapper.mapDboToDomain(it)
-        }
-    }
-
-    override fun update(entity: Track): Track {
-        TODO("Not yet implemented")
-    }
-
-    override fun deleteById(id: Int) {
-        repository.deleteById(id)
     }
 
 }

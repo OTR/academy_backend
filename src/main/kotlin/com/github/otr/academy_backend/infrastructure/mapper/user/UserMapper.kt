@@ -3,6 +3,7 @@ package com.github.otr.academy_backend.infrastructure.mapper.user
 import com.github.otr.academy_backend.infrastructure.database.dbo.UserEntity
 import com.github.otr.academy_backend.domain.model.User
 import com.github.otr.academy_backend.infrastructure.controller.form.CreateUserDataForm
+import com.github.otr.academy_backend.infrastructure.mapper.Mapper
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -14,20 +15,20 @@ import java.time.LocalDate
  *
  */
 @Component
-class UserMapper {
+class UserMapper : Mapper<User, UserEntity> {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
-    fun mapDboToDomain(dbModel: UserEntity) = User(
-        id = dbModel.id ?: -1,
-        userName = dbModel.userName,
-        email = dbModel.email,
-        password = dbModel.password,
-        firstName = dbModel.firstName,
-        accCreatedTime = dbModel.accCreatedTime
+    override fun mapDboToDomain(entity: UserEntity) = User(
+        id = entity.id ?: -1,
+        userName = entity.userName,
+        email = entity.email,
+        password = entity.password,
+        firstName = entity.firstName,
+        accCreatedTime = entity.accCreatedTime
     )
 
-    fun mapDomainToDbo(entity: User) = UserEntity(
+    override fun mapDomainToDbo(entity: User) = UserEntity(
         id = entity.id,
         userName = entity.userName,
         email = entity.email,

@@ -2,6 +2,7 @@ package com.github.otr.academy_backend.infrastructure.mapper.project
 
 import com.github.otr.academy_backend.domain.model.Project
 import com.github.otr.academy_backend.infrastructure.database.dbo.ProjectEntity
+import com.github.otr.academy_backend.infrastructure.mapper.Mapper
 
 import org.springframework.stereotype.Component
 
@@ -9,9 +10,9 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class ProjectMapper {
+class ProjectMapper : Mapper<Project, ProjectEntity> {
 
-    fun mapDboToDomain(entity: ProjectEntity): Project = Project(
+    override fun mapDboToDomain(entity: ProjectEntity): Project = Project(
         id = entity.id,
         title = entity.title,
         description = entity.description,
@@ -27,7 +28,7 @@ class ProjectMapper {
         readiness = entity.readiness
     )
 
-    fun mapDomainToDbo(entity: Project): ProjectEntity = ProjectEntity(
+    override fun mapDomainToDbo(entity: Project): ProjectEntity = ProjectEntity(
         id = entity.id,
         title = entity.title,
         description = entity.description,

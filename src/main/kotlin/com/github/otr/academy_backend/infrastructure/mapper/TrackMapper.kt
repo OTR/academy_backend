@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class TrackMapper {
+class TrackMapper : Mapper<Track, TrackEntity> {
 
-    fun mapDboToDomain(entity: TrackEntity): Track = Track(
+    override fun mapDboToDomain(entity: TrackEntity): Track = Track(
             id = entity.id,
             title = entity.title,
             description = entity.description,
@@ -21,7 +21,7 @@ class TrackMapper {
             isPublic = entity.isPublic
         )
 
-    fun mapDomainToDbo(entity: Track): TrackEntity = TrackEntity(
+    override fun mapDomainToDbo(entity: Track): TrackEntity = TrackEntity(
         id = entity.id,
         categories = emptyList(), // TODO:
         trackProjects = emptyList(),
