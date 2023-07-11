@@ -20,7 +20,12 @@ class HtmlTrackController(
     private val getProjectsByLevelByTrackIdUseCase: GetProjectsByLevelByTrackIdUseCase
 ) {
 
-    @GetMapping(path=["/tracks/{track_id}"])
+    companion object {
+        private const val TRACK_DETAIL_PAGE_PATH: String = "/tracks"
+        private const val TRACK_DETAIL_PAGE_TEMPLATE: String = "track"
+    }
+
+    @GetMapping(path=["$TRACK_DETAIL_PAGE_PATH/{track_id}"])
     fun getDetailTrackPage(
         @PathVariable("track_id") trackId: Int,
         model: Model
@@ -36,7 +41,7 @@ class HtmlTrackController(
         model["betaProjects"] = projectsByLevel.betaProjects
         model["capstoneProjects"] = projectsByLevel.capstoneProjects
 
-        return "track"
+        return TRACK_DETAIL_PAGE_TEMPLATE
     }
 
 }

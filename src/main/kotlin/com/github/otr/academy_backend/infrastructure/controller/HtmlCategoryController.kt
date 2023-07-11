@@ -28,12 +28,14 @@ class HtmlCategoryController(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     companion object {
+        private const val ALL_TRACKS_PAGE_PATH: String = "/tracks"
+        private const val ALL_TRACKS_PAGE_TEMPLATE: String = "tracks"
         private const val DEFAULT_TITLE: String = "Default Title"
         private const val TRACKS_TITLE_KEY: String = "title.tracks"
         private const val ALL_TRACKS_CATEGORY_ID: Int = 8
     }
 
-    @GetMapping(path=["/tracks"])
+    @GetMapping(path=[ALL_TRACKS_PAGE_PATH])
     fun getTracksPage(
         @RequestParam(
             name = "category",
@@ -50,7 +52,7 @@ class HtmlCategoryController(
         model["currCategoryId"] = categoryId
         model["categories"] = categories
         model["currTracks"] = currTracks
-        return "tracks"
+        return ALL_TRACKS_PAGE_TEMPLATE
     }
 
 }

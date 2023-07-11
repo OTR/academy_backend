@@ -15,14 +15,16 @@ class HtmlController(
 ) {
 
     companion object {
+        private const val INDEX_PAGE_PATH: String = "/"
+        private const val INDEX_PAGE_TEMPLATE: String = "index"
         private const val DEFAULT_TITLE: String = "Default Title"
         private const val INDEX_TITLE_KEY: String = "title.index"
     }
 
-    @GetMapping(path=["/"])
+    @GetMapping(path=[INDEX_PAGE_PATH])
     fun getIndexPage(model: Model): String {
         model["title"] = environment.getProperty(INDEX_TITLE_KEY , DEFAULT_TITLE)
-        return "index"
+        return INDEX_PAGE_TEMPLATE
     }
 
 }
