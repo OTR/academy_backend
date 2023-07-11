@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{fragments/header}"/>
+<body>
+<th:block th:replace="~{fragments/navbar}"/>
+<!-- Actual content starts here -->
+<div class="container">
+    <!-- Display labels (chips) for track -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <h4>
+                <span class="badge text-bg-secondary">Track</span>
+                <span class="badge text-bg-dark">Free</span>
+                <span class="badge text-bg-warning">Beta</span>
+            </h4>
+        </div>
+    </div>
+    <!-- Display title for a track -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <h1>[[${track.title}]]</h1>
+        </div>
+    </div>
+    <!-- Display description for a track -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>[[${track.description}]]</p>
+        </div>
+    </div>
+    <!-- Display long description for a track -->
+    <h3>What you'll do:</h3>
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>[(${track.longDescription})]</p>
+        </div>
+    </div>
+    <!-- Display capstone projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Capstone projects</p>
+        </div>
+    </div>
+    <!-- Display beta projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Beta projects</p>
+        </div>
+    </div>
+    <!-- Display easy projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Easy projects</p>
+        </div>
+    </div>
+    <!-- Display hard projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Hard projects</p>
+        </div>
+    </div>
+    <!-- Display medium projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Medium projects</p>
+        </div>
+    </div>
+    <!-- Display challenging projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <p>TODO: Challenging projects</p>
+        </div>
+    </div>
+</div>
+<!-- Actual content ends here -->
+<th:block th:replace="~{fragments/footer}"/>
+</body>
+</html>

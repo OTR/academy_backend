@@ -21,4 +21,15 @@ class TrackMapper {
             isPublic = entity.isPublic
         )
 
+    fun mapDomainToDbo(entity: Track): TrackEntity = TrackEntity(
+        id = entity.id,
+        categories = emptyList(),
+        title = entity.title,
+        description = entity.description,
+        longDescription = entity.longDescription,
+        isBeta = entity.isBeta,
+        isFree = entity.isFree,
+        isPublic = entity.isPublic
+    )
+
 }

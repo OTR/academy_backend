@@ -2,6 +2,8 @@ package com.github.otr.academy_backend.infrastructure.repository.track
 
 import com.github.otr.academy_backend.domain.model.Track
 import com.github.otr.academy_backend.domain.repository.TrackRepository
+import com.github.otr.academy_backend.infrastructure.mapper.TrackMapper
+
 import org.springframework.stereotype.Component
 
 /**
@@ -9,19 +11,26 @@ import org.springframework.stereotype.Component
  */
 @Component
 class TrackRepositoryImpl(
-    private val repository: JpaTrackRepository
+    private val repository: JpaTrackRepository,
+    private val mapper: TrackMapper
 ) : TrackRepository {
 
     override fun getAll(): List<Track> {
-        TODO("Not yet implemented")
+        return repository.findAll().map {
+            mapper.mapDboToDomain(it)
+        }
     }
 
     override fun getById(id: Int): Track {
-        TODO("Not yet implemented")
+        return repository.findById(id).orElseThrow().let {
+            mapper.mapDboToDomain(it)
+        }
     }
 
     override fun create(entity: Track): Track {
-        TODO("Not yet implemented")
+        return repository.save(mapper.mapDomainToDbo(entity)).let {
+            mapper.mapDboToDomain(it)
+        }
     }
 
     override fun update(entity: Track): Track {
@@ -29,6 +38,7 @@ class TrackRepositoryImpl(
     }
 
     override fun deleteById(id: Int) {
-        TODO("Not yet implemented")
+        repository.deleteById(id)
     }
+
 }
