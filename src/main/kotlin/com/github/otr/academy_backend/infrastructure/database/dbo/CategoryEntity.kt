@@ -11,7 +11,7 @@ import jakarta.persistence.Table
  */
 @Entity
 @Table(name = "categories")
-class CategoryEntity(
+data class CategoryEntity(
     @Id val id: Int = 0,
 
     @ManyToMany
