@@ -28,46 +28,118 @@
         </div>
     </div>
     <!-- Display long description for a track -->
-    <h3>What you'll do:</h3>
     <div class="row">
         <div class="col-12 p-1">
+            <h3>What you'll do:</h3>
             <p>[(${track.longDescription})]</p>
         </div>
     </div>
     <!-- Display capstone projects -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>TODO: Capstone projects</p>
+            <h3>Capstone projects</h3>
+            <div th:each="project: ${capstoneProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Display beta projects -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>TODO: Beta projects</p>
+            <h3>Beta projects</h3>
+            <div th:each="project: ${betaProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Display easy projects -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>TODO: Easy projects</p>
-        </div>
-    </div>
-    <!-- Display hard projects -->
-    <div class="row">
-        <div class="col-12 p-1">
-            <p>TODO: Hard projects</p>
+            <h3>Easy projects</h3>
+            <div th:each="project: ${easyProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Display medium projects -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>TODO: Medium projects</p>
+            <h3>Medium projects</h3>
+            <div th:each="project: ${mediumProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Display hard projects -->
+    <div class="row">
+        <div class="col-12 p-1">
+            <h3>Hard projects</h3>
+            <div th:each="project: ${hardProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Display challenging projects -->
     <div class="row">
         <div class="col-12 p-1">
-            <p>TODO: Challenging projects</p>
+            <h3>Challenging projects</h3>
+            <div th:each="project: ${challengingProjects}">
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="${@environment.getProperty('path.projects')} + '/' + ${project.id}">
+                            <h2>[[${project.title} ? ${project.title}]]</h2><span> (#[[${project.id}]])</span>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <span>[[${project.description} ? ${project.description}]]</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
