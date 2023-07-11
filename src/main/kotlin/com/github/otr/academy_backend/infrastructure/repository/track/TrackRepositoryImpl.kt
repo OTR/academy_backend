@@ -59,8 +59,6 @@ class TrackRepositoryImpl(
             .filter { it.projectLevel == CAPSTONE_PROJECT_KEY }
             .map { projectMapper.mapDboToDomain(it.project) }
 
-        println()
-
         return ProjectsByLevel(
             easyProjects = easyProjects,
             mediumProjects = mediumProjects,

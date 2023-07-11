@@ -1,7 +1,9 @@
 package com.github.otr.academy_backend.infrastructure.controller
 
 import com.github.otr.academy_backend.domain.model.Project
+import com.github.otr.academy_backend.domain.model.Stage
 import com.github.otr.academy_backend.use_case.project.GetProjectDetailsByIdUseCase
+import com.github.otr.academy_backend.use_case.stage.GetStagesByProjectIdUseCase
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable
 @Controller
 class HtmlProjectController(
     private val getProjectDetailsByIdUseCase: GetProjectDetailsByIdUseCase,
+    private val getStagesByProjectIdUseCase: GetStagesByProjectIdUseCase
 ) {
 
     companion object {
@@ -28,7 +31,10 @@ class HtmlProjectController(
         model: Model
     ): String {
         val project: Project = getProjectDetailsByIdUseCase(projectId)
+        val stages: List<Stage> = getStagesByProjectIdUseCase(projectId)
+
         model["project"] = project
+        model["stages"] = stages
 
         return PROJECT_DETAIL_PAGE_TEMPLATE
     }
