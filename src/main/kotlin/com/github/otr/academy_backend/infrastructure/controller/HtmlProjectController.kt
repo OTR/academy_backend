@@ -2,6 +2,7 @@ package com.github.otr.academy_backend.infrastructure.controller
 
 import com.github.otr.academy_backend.domain.model.Project
 import com.github.otr.academy_backend.use_case.project.GetProjectDetailsByIdUseCase
+
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set

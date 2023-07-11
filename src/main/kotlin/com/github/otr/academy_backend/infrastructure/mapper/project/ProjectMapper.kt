@@ -15,7 +15,7 @@ class ProjectMapper {
         id = entity.id,
         title = entity.title,
         description = entity.description,
-        longDescription = entity.description,
+        longDescription = entity.longDescription,
         environment = entity.environment,
         language = entity.projectLanguage,
         isBeta = entity.isBeta,
