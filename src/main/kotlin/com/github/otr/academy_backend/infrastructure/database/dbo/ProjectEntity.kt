@@ -3,6 +3,8 @@ package com.github.otr.academy_backend.infrastructure.database.dbo
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
+import jakarta.persistence.ManyToMany
+import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
 
 /**
@@ -23,8 +25,11 @@ data class ProjectEntity(
     @Column(columnDefinition = "CLOB")
     val longDescription: String,
 
+    @OneToMany(mappedBy = "project")
+    val projectTracks: List<TrackToProjectEntity>,
+
     val environment: String,
-    val language: String,
+    val projectLanguage: String,
     val isBeta: Boolean,
     val isTemplateBased: Boolean,
     val useIde: Boolean,
@@ -33,4 +38,4 @@ data class ProjectEntity(
     val stagesCount: Int,
     val readiness: Int,
 
-)
+    )

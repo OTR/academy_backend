@@ -23,7 +23,8 @@ class TrackMapper {
 
     fun mapDomainToDbo(entity: Track): TrackEntity = TrackEntity(
         id = entity.id,
-        categories = emptyList(),
+        categories = emptyList(), // TODO:
+        trackProjects = emptyList(),
         title = entity.title,
         description = entity.description,
         longDescription = entity.longDescription,
