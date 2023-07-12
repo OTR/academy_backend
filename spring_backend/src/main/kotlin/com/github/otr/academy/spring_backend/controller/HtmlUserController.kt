@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.User
 import com.github.otr.academy.domain.use_case.user.CreateUserUseCase
 
 import com.github.otr.academy.spring_backend.controller.form.CreateUserDataForm
-import com.github.otr.academy.spring_backend.database.mapper.UserMapper
+import com.github.otr.academy.spring_backend.controller.mapper.UserFormMapper
 
 import org.springframework.core.env.Environment
 import org.springframework.http.MediaType
@@ -24,7 +24,7 @@ class HtmlUserController(
     private val createUserUseCase: CreateUserUseCase
 ) {
 
-    private val mapper: UserMapper = UserMapper()
+    private val mapper: UserFormMapper = UserFormMapper()
 
     companion object {
         private const val ADD_EDIT_PAGE_PATH: String = "/profile/new"
