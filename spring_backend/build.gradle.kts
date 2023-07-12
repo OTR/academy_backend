@@ -5,8 +5,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core"))
 
+    implementation(project(":domain"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
