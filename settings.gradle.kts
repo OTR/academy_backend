@@ -13,3 +13,4 @@ rootProject.name = "academy_backend"
 include(":domain")
 include(":spring_backend")
 include(":scraper")
+include(":wiki_renderer")
