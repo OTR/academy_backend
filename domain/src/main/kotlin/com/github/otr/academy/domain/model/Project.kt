@@ -1,7 +1,8 @@
 package com.github.otr.academy.domain.model
 
 /**
- *
+ * Excluded fields:
+ *      val stagesIds: List<Int>,
  */
 data class Project(
     val id: Int,

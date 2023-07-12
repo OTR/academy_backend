@@ -1,7 +1,11 @@
 package com.github.otr.academy.domain.model
 
 /**
- *
+ * Excluded fields:
+ *      val prerequisites: List<Int>,
+ *      val hierarchy: List<Int>,
+ *      val children: List<String>,
+ *      val followers: List<Int>,
  */
 data class Topic(
     val id: Int,
