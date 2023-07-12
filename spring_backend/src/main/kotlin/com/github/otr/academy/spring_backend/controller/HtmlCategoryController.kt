@@ -3,8 +3,8 @@ package com.github.otr.academy.spring_backend.controller
 import com.github.otr.academy.domain.model.Category
 import com.github.otr.academy.domain.model.Track
 
-import com.github.otr.academy.spring_backend.use_case.category.GetAllCategoriesUseCase
-import com.github.otr.academy.spring_backend.use_case.category.GetTracksByCategoryIdUseCase
+import com.github.otr.academy.domain.use_case.category.GetAllCategoriesUseCase
+import com.github.otr.academy.domain.use_case.category.GetTracksByCategoryIdUseCase
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

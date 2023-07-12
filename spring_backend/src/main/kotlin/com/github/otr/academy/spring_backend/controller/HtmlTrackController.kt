@@ -1,10 +1,10 @@
 package com.github.otr.academy.spring_backend.controller
 
-import com.github.otr.academy.domain.model.ProjectsByLevel
+import com.github.otr.academy.domain.response.ProjectsByLevel
 import com.github.otr.academy.domain.model.Track
 
-import com.github.otr.academy.spring_backend.use_case.project.GetProjectsByLevelByTrackIdUseCase
-import com.github.otr.academy.spring_backend.use_case.track.GetTrackDetailsByIdUseCase
+import com.github.otr.academy.domain.use_case.track.GetProjectsByLevelByTrackIdUseCase
+import com.github.otr.academy.domain.use_case.track.GetTrackDetailsByIdUseCase
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

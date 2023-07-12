@@ -1,7 +1,11 @@
-package com.github.otr.academy.domain.model
+package com.github.otr.academy.domain.response
+
+import com.github.otr.academy.domain.model.Project
 
 /**
- *
+ * Represents a response object for Use Case
+ * of getting Projects for specific Track
+ * these Projects divided by difficulty level
  */
 data class ProjectsByLevel(
     val easyProjects: List<Project>,

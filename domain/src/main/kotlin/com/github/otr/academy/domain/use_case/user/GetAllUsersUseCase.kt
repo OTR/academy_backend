@@ -1,14 +1,11 @@
-package com.github.otr.academy.spring_backend.use_case.user
+package com.github.otr.academy.domain.use_case.user
 
 import com.github.otr.academy.domain.model.User
 import com.github.otr.academy.domain.repository.UserRepository
 
-import org.springframework.stereotype.Service
-
 /**
  *
  */
-@Service // TODO: shouldn't do it here
 class GetAllUsersUseCase(
     private val repository: UserRepository
 ) {

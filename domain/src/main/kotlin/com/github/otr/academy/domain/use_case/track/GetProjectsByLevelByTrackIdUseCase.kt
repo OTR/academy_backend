@@ -1,14 +1,12 @@
-package com.github.otr.academy.spring_backend.use_case.project
+package com.github.otr.academy.domain.use_case.track
 
-import com.github.otr.academy.domain.model.ProjectsByLevel
+import com.github.otr.academy.domain.response.ProjectsByLevel
 import com.github.otr.academy.domain.repository.TrackRepository
 
-import org.springframework.stereotype.Service
 
 /**
  *
  */
-@Service
 class GetProjectsByLevelByTrackIdUseCase(
     private val repository: TrackRepository
 ) {

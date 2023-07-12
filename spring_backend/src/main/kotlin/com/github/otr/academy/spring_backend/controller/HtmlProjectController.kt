@@ -3,8 +3,8 @@ package com.github.otr.academy.spring_backend.controller
 import com.github.otr.academy.domain.model.Project
 import com.github.otr.academy.domain.model.Stage
 
-import com.github.otr.academy.spring_backend.use_case.project.GetProjectDetailsByIdUseCase
-import com.github.otr.academy.spring_backend.use_case.stage.GetStagesByProjectIdUseCase
+import com.github.otr.academy.domain.use_case.project.GetProjectDetailsByIdUseCase
+import com.github.otr.academy.domain.use_case.stage.GetStagesByProjectIdUseCase
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

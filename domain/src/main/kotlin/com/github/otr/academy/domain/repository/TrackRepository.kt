@@ -1,6 +1,6 @@
 package com.github.otr.academy.domain.repository
 
-import com.github.otr.academy.domain.model.ProjectsByLevel
+import com.github.otr.academy.domain.response.ProjectsByLevel
 import com.github.otr.academy.domain.model.Track
 
 /**

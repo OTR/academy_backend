@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.User
 
 import com.github.otr.academy.spring_backend.controller.form.CreateUserDataForm
 import com.github.otr.academy.spring_backend.mapper.UserMapper
-import com.github.otr.academy.spring_backend.use_case.user.CreateUserUseCase
+import com.github.otr.academy.domain.use_case.user.CreateUserUseCase
 
 import org.springframework.core.env.Environment
 import org.springframework.http.MediaType

@@ -1,7 +1,7 @@
 package com.github.otr.academy.spring_backend.repository.track
 
 import com.github.otr.academy.domain.model.Project
-import com.github.otr.academy.domain.model.ProjectsByLevel
+import com.github.otr.academy.domain.response.ProjectsByLevel
 import com.github.otr.academy.domain.model.Track
 import com.github.otr.academy.domain.repository.TrackRepository
 
