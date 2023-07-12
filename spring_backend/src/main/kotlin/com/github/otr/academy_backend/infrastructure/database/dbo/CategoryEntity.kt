@@ -12,7 +12,8 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "categories")
 data class CategoryEntity(
-    @Id val id: Int = 0,
+
+    @Id val id: Int,
 
     @ManyToMany
     @JoinTable(name = "categories_to_tracks") // TODO: Make Pk1 and Pk2 unique together
@@ -20,4 +21,5 @@ data class CategoryEntity(
 
     val title: String,
     val description: String,
+
 )

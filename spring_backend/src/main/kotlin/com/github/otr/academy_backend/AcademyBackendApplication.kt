@@ -7,7 +7,6 @@ import org.springframework.boot.runApplication
  *
  */
 @SpringBootApplication
-//@EnableJpaAuditing
 class AcademyBackendApplication
 
 fun main(args: Array<String>) {
