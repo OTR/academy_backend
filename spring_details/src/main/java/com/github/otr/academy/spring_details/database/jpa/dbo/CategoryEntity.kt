@@ -22,4 +22,4 @@ data class CategoryEntity(
     val title: String,
     val description: String,
 
-    )
+)
