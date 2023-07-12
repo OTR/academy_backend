@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.Project
 import com.github.otr.academy.domain.repository.ProjectRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.ProjectEntity
-import com.github.otr.academy.spring_backend.mapper.ProjectMapper
+import com.github.otr.academy.spring_backend.database.mapper.ProjectMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component

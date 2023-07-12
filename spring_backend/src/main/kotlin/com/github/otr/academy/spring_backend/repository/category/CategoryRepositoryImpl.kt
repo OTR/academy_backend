@@ -5,8 +5,8 @@ import com.github.otr.academy.domain.model.Track
 import com.github.otr.academy.domain.repository.CategoryRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.CategoryEntity
-import com.github.otr.academy.spring_backend.mapper.CategoryMapper
-import com.github.otr.academy.spring_backend.mapper.TrackMapper
+import com.github.otr.academy.spring_backend.database.mapper.CategoryMapper
+import com.github.otr.academy.spring_backend.database.mapper.TrackMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component

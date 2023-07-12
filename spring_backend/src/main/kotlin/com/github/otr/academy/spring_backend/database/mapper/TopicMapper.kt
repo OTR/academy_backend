@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.Topic
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class TopicMapper : Mapper<Topic, TopicEntity> {
+class TopicMapper : DboMapper<Topic, TopicEntity> {
 
     override fun mapDboToDomain(entity: TopicEntity): Topic = Topic(
         id = entity.id,

@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.Stage
 import com.github.otr.academy.domain.repository.StageRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.StageEntity
-import com.github.otr.academy.spring_backend.mapper.StageMapper
+import com.github.otr.academy.spring_backend.database.mapper.StageMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component

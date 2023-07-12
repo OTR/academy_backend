@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.Stage
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class StageMapper : Mapper<Stage, StageEntity> {
+class StageMapper : DboMapper<Stage, StageEntity> {
 
     override fun mapDboToDomain(entity: StageEntity): Stage = Stage(
         id = entity.id,

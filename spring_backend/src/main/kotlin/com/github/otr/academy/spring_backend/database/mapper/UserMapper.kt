@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.User
 
@@ -16,7 +16,7 @@ import java.time.LocalDate
  *
  */
 @Component
-class UserMapper : Mapper<User, UserEntity> {
+class UserMapper : DboMapper<User, UserEntity> {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 

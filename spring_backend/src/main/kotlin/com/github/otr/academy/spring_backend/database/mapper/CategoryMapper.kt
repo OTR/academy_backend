@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.Category
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class CategoryMapper : Mapper<Category, CategoryEntity> {
+class CategoryMapper : DboMapper<Category, CategoryEntity> {
 
     override fun mapDboToDomain(entity: CategoryEntity): Category {
         return Category(

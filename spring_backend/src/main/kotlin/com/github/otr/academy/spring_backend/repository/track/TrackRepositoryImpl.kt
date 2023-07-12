@@ -7,8 +7,8 @@ import com.github.otr.academy.domain.repository.TrackRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.TrackEntity
 import com.github.otr.academy.spring_backend.database.dbo.TrackToProjectEntity
-import com.github.otr.academy.spring_backend.mapper.TrackMapper
-import com.github.otr.academy.spring_backend.mapper.ProjectMapper
+import com.github.otr.academy.spring_backend.database.mapper.TrackMapper
+import com.github.otr.academy.spring_backend.database.mapper.ProjectMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component

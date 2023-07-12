@@ -1,9 +1,9 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 /**
  *
  */
-interface Mapper <T, S> {
+interface DboMapper <T, S> {
 
     fun mapDboToDomain(entity: S): T
 

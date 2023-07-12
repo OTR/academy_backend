@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.Track
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class TrackMapper : Mapper<Track, TrackEntity> {
+class TrackMapper : DboMapper<Track, TrackEntity> {
 
     override fun mapDboToDomain(entity: TrackEntity): Track = Track(
             id = entity.id,

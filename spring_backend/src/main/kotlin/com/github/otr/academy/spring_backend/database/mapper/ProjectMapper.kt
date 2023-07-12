@@ -1,4 +1,4 @@
-package com.github.otr.academy.spring_backend.mapper
+package com.github.otr.academy.spring_backend.database.mapper
 
 import com.github.otr.academy.domain.model.Project
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
  *
  */
 @Component
-class ProjectMapper : Mapper<Project, ProjectEntity> {
+class ProjectMapper : DboMapper<Project, ProjectEntity> {
 
     override fun mapDboToDomain(entity: ProjectEntity): Project = Project(
         id = entity.id,

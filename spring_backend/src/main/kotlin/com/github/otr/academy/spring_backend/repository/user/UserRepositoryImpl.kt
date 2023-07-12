@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.User
 import com.github.otr.academy.domain.repository.UserRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.UserEntity
-import com.github.otr.academy.spring_backend.mapper.UserMapper
+import com.github.otr.academy.spring_backend.database.mapper.UserMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component

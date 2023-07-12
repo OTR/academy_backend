@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.Topic
 import com.github.otr.academy.domain.repository.TopicRepository
 
 import com.github.otr.academy.spring_backend.database.dbo.TopicEntity
-import com.github.otr.academy.spring_backend.mapper.TopicMapper
+import com.github.otr.academy.spring_backend.database.mapper.TopicMapper
 import com.github.otr.academy.spring_backend.repository.BaseRepository
 
 import org.springframework.stereotype.Component
