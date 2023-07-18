@@ -1,20 +1,18 @@
-package data.scraper.task.step
+package com.github.otr.academy.scraper.task.step
 
-import data.mapper.blank.AttemptReqestFactory
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.attempt.LoadAttemptFromRemoteTask
-import data.scraper.task.step.handler.GetStepFromTableHandler
-import data.scraper.task.step.handler.InsertStepIntoTableHandler
-import data.scraper.task.step.request.StepRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.request_factory.AttemptRequestFactory
+import com.github.otr.academy.scraper.task.attempt.LoadAttemptFromRemoteTask
+import com.github.otr.academy.scraper.task.step.handler.GetStepFromTableHandler
+import com.github.otr.academy.scraper.task.step.handler.InsertStepIntoTableHandler
+import com.github.otr.academy.scraper.task.step.request.StepRequest
 
 /**
  *
  */
-class SaveStepToDbTask(
+internal class SaveStepToDbTask(
     private val request: StepRequest
 ) : BaseTask {
 
@@ -49,7 +47,7 @@ class SaveStepToDbTask(
             val stepId: Int = response.dto.id
             return true to listOf(
                 LoadAttemptFromRemoteTask(
-                    AttemptReqestFactory.getBlankAttemptRequest(stepId)
+                    AttemptRequestFactory.getBlankAttemptRequest(stepId)
                 )
             )
         } else {

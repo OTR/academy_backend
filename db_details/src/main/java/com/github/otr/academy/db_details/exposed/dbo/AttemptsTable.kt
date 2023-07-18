@@ -1,7 +1,7 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Attempt
-import domain.model.AttemptDataset
+import com.github.otr.academy.domain.model.Attempt
+import com.github.otr.academy.domain.model.AttemptDataset
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
@@ -10,7 +10,7 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 /**
  *
  */
-object AttemptsTable : Table(name = "attempts"){
+internal object AttemptsTable : Table(name = "attempts"){
     val attemptId = integer("attempt_id")
     val attemptStatus = varchar("attempt_status", 255)
     val attemptStep = integer("attempt_step")

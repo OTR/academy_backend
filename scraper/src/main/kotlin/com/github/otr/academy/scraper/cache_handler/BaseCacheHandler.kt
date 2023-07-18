@@ -1,8 +1,8 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
-import data.scraper.core.handler.BaseGenericHandler
+import com.github.otr.academy.scraper.core.handler.BaseGenericHandler
 
 /**
  *
  */
-abstract class BaseCacheHandler : BaseGenericHandler<Cacheable>()
+internal abstract class BaseCacheHandler : BaseGenericHandler<Cacheable>()

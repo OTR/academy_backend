@@ -1,6 +1,7 @@
 package com.github.otr.academy.scraper.mapper
 
 import com.github.otr.academy.domain.model.AttemptDataset
+
 import com.github.otr.academy.scraper.dto.attempt.DatasetDTO
 
 import javax.inject.Inject
@@ -8,7 +9,7 @@ import javax.inject.Inject
 /**
  *
  */
-class DatasetDtoToDomainMapperImpl @Inject constructor(
+internal class DatasetMapper @Inject constructor(
 
 ) {
 

@@ -1,15 +1,16 @@
 package com.github.otr.academy.scraper.request_factory
 
+import com.github.otr.academy.scraper.dto.step.StepContainerDTO
+import com.github.otr.academy.scraper.dto.step.StepDTO
+import com.github.otr.academy.scraper.task.step.request.StepRequest
+import com.github.otr.academy.scraper.task.step.request.StepRequestType
+
 import com.google.gson.Gson
-import data.scraper.dto.step.StepContainerDTO
-import data.scraper.dto.step.StepDTO
-import data.scraper.task.step.request.StepRequest
-import data.scraper.task.step.request.StepRequestType
 
 /**
- *
+ * TODO: Replace Gson with P2I
  */
-object StepRequestFactory {
+internal object StepRequestFactory {
 
     fun getBlankStepRequest(
         stepId: Int,

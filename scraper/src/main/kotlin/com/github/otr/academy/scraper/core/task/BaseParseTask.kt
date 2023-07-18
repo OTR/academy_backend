@@ -1,46 +1,45 @@
-package data.scraper.core.task
+package com.github.otr.academy.scraper.core.task
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
-import data.scraper.cache_handler.GetPathToCacheFile
-import data.scraper.cache_handler.ReadSourceFromCache
-import data.scraper.cache_handler.WriteSourceToCache
-import data.scraper.core.handler.Handler
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
-
-import kotlin.reflect.KClass
-import kotlin.reflect.full.primaryConstructor
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
+import com.github.otr.academy.scraper.cache_handler.GetPathToCacheFile
+import com.github.otr.academy.scraper.cache_handler.ReadSourceFromCache
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.di.ApplicationComponent
 
 /**
  *
  */
-abstract class BaseParseTask<T : Cacheable>(
+internal abstract class BaseParseTask<T : Cacheable>(
     private val request: T
 ) : BaseTask {
 
-    private val taskName = request.javaClass.simpleName.dropLast("Request".length)
+    private val taskName = request.javaClass.simpleName
+        .dropLast("Request".length)
 
-    override val fullTaskName: String = "Parse JSON with $taskName #${request.type.id} to $taskName DTO"
+    override val fullTaskName: String = buildString {
+        append("Parse JSON with $taskName #")
+        append(request.type.id)
+        append(" to $taskName DTO")
+    }
 
     private val component: ApplicationComponent = DaggerApplicationComponent.create()
 
     abstract val parseJsonHandler: Handler<Cacheable>
 
     override fun buildChainOfHandlers(): Handler<T> {
-        val chain = GetPathToCacheFile.setNext(
+        val chain = GetPathToCacheFile().setNext(
             CheckIfCacheFileExistsAndNotEmpty().setNext(
-                ReadSourceFromCache.setNext(
+                ReadSourceFromCache().setNext(
                     parseJsonHandler
                 )
             )
         )
 
-        return chain as Handler<T> // TODO: Remove tye casts
+        return chain as Handler<T> // TODO: Remove type casts
     }
 
-//    override fun process(): Pair<Boolean, List<BaseTask>> {
+//    override fun process(): Pair<Boolean, List<com.github.otr.academy.scraper.core.task.BaseTask>> {
 //        val chain: Handler<T> = buildChainOfHandlers()
 //        val response: T = chain(request)
 //
@@ -55,6 +54,6 @@ abstract class BaseParseTask<T : Cacheable>(
 //
 //    }
 //
-//    abstract fun positiveResponse(): KClass<out BaseTask>
+//    abstract fun positiveResponse(): KClass<out com.github.otr.academy.scraper.core.task.BaseTask>
 
 }

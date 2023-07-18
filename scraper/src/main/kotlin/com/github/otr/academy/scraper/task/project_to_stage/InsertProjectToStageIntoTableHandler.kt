@@ -1,8 +1,8 @@
-package data.scraper.task.project_to_stage
+package com.github.otr.academy.scraper.task.project_to_stage
 
-import data.repository.parent_children.ProjectToStageRepositoryImpl
-import data.scraper.task.project.handler.BaseProjectHandler
-import data.scraper.task.project.request.ProjectRequest
+
+import com.github.otr.academy.scraper.task.project.handler.BaseProjectHandler
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 import javax.inject.Inject
 
@@ -10,7 +10,7 @@ import javax.inject.Inject
  *
  */
 @Deprecated("Stage row already contains Foreign key to Project Id")
-class InsertProjectToStageIntoTableHandler @Inject constructor(
+internal class InsertProjectToStageIntoTableHandler @Inject constructor(
     private val repository: ProjectToStageRepositoryImpl
 ) : BaseProjectHandler() {
 

@@ -1,11 +1,14 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
 import java.io.File
+import javax.inject.Inject
 
 /**
  *
  */
-object ReadSourceFromCache : BaseCacheHandler() {
+internal class ReadSourceFromCache @Inject constructor(
+
+) : BaseCacheHandler() {
 
     override val handlerName: String = "Read Source Data from Cache"
 

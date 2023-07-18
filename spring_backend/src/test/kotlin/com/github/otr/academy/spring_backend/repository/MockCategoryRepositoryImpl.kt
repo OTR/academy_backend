@@ -25,7 +25,7 @@ class MockCategoryRepositoryImpl: CategoryRepository {
         TODO("Not yet implemented")
     }
 
-    override fun create(entity: Category): Category {
+    override fun save(entity: Category): Category {
         TODO("Not yet implemented")
     }
 

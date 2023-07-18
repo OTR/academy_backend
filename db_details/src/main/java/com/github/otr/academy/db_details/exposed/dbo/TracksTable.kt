@@ -1,6 +1,6 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Track
+import com.github.otr.academy.domain.model.Track
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 /**
  *
  */
-object TracksTable : Table(name = "tracks") {
+internal object TracksTable : Table(name = "tracks") {
     val trackId = integer("track_id")
     val trackTitle = varchar("track_title", 255)
     val trackDescription = varchar("track_description", 1024)
@@ -45,12 +45,12 @@ object TracksTable : Table(name = "tracks") {
         title = this[trackTitle],
         description = this[trackDescription],
         longDescription = this[trackLongDescription],
-        easyProjects = emptyList(),
-        mediumProjects = emptyList(),
-        hardProjects = emptyList(),
-        challengingProjects = emptyList(),
-        betaProjects = emptyList(),
-        capstoneProjects = emptyList(),
+//        easyProjects = emptyList(),
+//        mediumProjects = emptyList(),
+//        hardProjects = emptyList(),
+//        challengingProjects = emptyList(),
+//        betaProjects = emptyList(),
+//        capstoneProjects = emptyList(),
         isBeta = this[isBetaTrack],
         isFree = this[isFreeTrack],
         isPublic = this[isPublicTrack]

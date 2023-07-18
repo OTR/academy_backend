@@ -1,19 +1,23 @@
-package data.scraper.task.categories.handler
+package com.github.otr.academy.scraper.task.categories.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.category.CategoriesDTO
+import com.github.otr.academy.scraper.request_factory.TrackRequestFactory
+import com.github.otr.academy.scraper.task.categories.request.CategoriesRequest
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
+import com.github.otr.academy.scraper.task.category.request.CategoryRequestType
 
 import com.google.gson.Gson
-import data.mapper.blank.TrackRequestFactory
 
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.category.CategoriesDTO
-import data.scraper.task.categories.request.CategoriesRequest
-import data.scraper.task.category.request.CategoryRequest
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.category.request.CategoryRequestType
+import javax.inject.Inject
 
 /**
  *
  */
-object ParseJsonCategoriesHandler : BaseCacheHandler() {
+internal class ParseJsonCategoriesHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
+) : BaseCacheHandler() {
 
     override val handlerName: String = "Parse Source JSON from cache file"
 

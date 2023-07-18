@@ -1,19 +1,18 @@
-package data.scraper.task.category
+package com.github.otr.academy.scraper.task.category
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.category.handler.GetCategoryFromTableHandler
-import data.scraper.task.category.handler.InsertCategoryIntoTableHandler
-import data.scraper.task.category.request.CategoryRequest
-import data.scraper.task.category_to_track.SaveCategoryToTrackTask
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.category.handler.GetCategoryFromTableHandler
+import com.github.otr.academy.scraper.task.category.handler.InsertCategoryIntoTableHandler
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
+import com.github.otr.academy.scraper.task.category_to_track.SaveCategoryToTrackTask
 
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
 
 /**
  *
  */
-class SaveCategoryToDbTask(val request: CategoryRequest) : BaseTask {
+internal class SaveCategoryToDbTask(val request: CategoryRequest) : BaseTask {
 
     override val fullTaskName: String = "Save Category `${request.title}` to Database"
 

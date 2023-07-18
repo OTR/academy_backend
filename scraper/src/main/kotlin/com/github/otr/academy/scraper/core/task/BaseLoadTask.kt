@@ -1,14 +1,12 @@
-package data.scraper.core.task
+package com.github.otr.academy.scraper.core.task
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
-import data.scraper.cache_handler.GetPathToCacheFile
-import data.scraper.cache_handler.ReadSourceFromCache
-import data.scraper.cache_handler.WriteSourceToCache
-import data.scraper.core.handler.Handler
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
+import com.github.otr.academy.scraper.cache_handler.GetPathToCacheFile
+import com.github.otr.academy.scraper.cache_handler.ReadSourceFromCache
+import com.github.otr.academy.scraper.cache_handler.WriteSourceToCache
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.di.ApplicationComponent
 
 import kotlin.reflect.KClass
 import kotlin.reflect.full.primaryConstructor
@@ -16,7 +14,7 @@ import kotlin.reflect.full.primaryConstructor
 /**
  *
  */
-abstract class BaseLoadTask<T : Cacheable>(
+internal abstract class BaseLoadTask<T : Cacheable>(
     private val request: T
 ) : BaseTask {
 
@@ -29,9 +27,9 @@ abstract class BaseLoadTask<T : Cacheable>(
     open val loadSourceJsonHandler: Handler<Cacheable> = component.__getLoadSourceJsonHandler()
 
     override fun buildChainOfHandlers(): Handler<T> {
-        val chain: Handler<Cacheable> = GetPathToCacheFile.setNext(
+        val chain: Handler<Cacheable> = GetPathToCacheFile().setNext(
             CheckIfCacheFileExistsAndNotEmpty().setNext(
-                ReadSourceFromCache.setNext(
+                ReadSourceFromCache().setNext(
                     loadSourceJsonHandler.setNext(
                         WriteSourceToCache
                     )
@@ -39,7 +37,7 @@ abstract class BaseLoadTask<T : Cacheable>(
             )
         )
 
-        return chain as Handler<T> // TODO: Remove tye casts
+        return chain as Handler<T> // TODO: Remove type casts
     }
 
     override fun process(): Pair<Boolean, List<BaseTask>> {

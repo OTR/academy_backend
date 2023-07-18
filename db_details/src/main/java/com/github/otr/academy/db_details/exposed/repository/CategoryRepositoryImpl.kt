@@ -1,15 +1,15 @@
-package data.repository
+package com.github.otr.academy.db_details.exposed.repository
 
-import data.database.SQLiteDatabaseFactory
-import data.table.CategoriesTable
-import data.table.CategoriesTable.mapRowToCategory
-import data.table.TracksTable
-import data.table.TracksTable.mapRowToTrack
-import data.table.parent_child.CategoriesToTracksTable
-import domain.model.Category
-import domain.model.Track
-import domain.repository.GenericParentChildrenRepository
-import domain.repository.GenericRepository
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.CategoriesTable
+import com.github.otr.academy.db_details.exposed.dbo.CategoriesTable.mapRowToCategory
+import com.github.otr.academy.db_details.exposed.dbo.TracksTable
+import com.github.otr.academy.db_details.exposed.dbo.TracksTable.mapRowToTrack
+import com.github.otr.academy.db_details.exposed.dbo.parent_child.CategoriesToTracksTable
+
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.repository.GenericRepository
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.insert
@@ -22,7 +22,7 @@ import javax.inject.Inject
 /**
  *
  */
-class CategoryRepositoryImpl @Inject constructor(
+internal class CategoryRepositoryImpl @Inject constructor(
 
 ): GenericRepository<Category>, GenericParentChildrenRepository<Category, Track> {
 
@@ -35,13 +35,13 @@ class CategoryRepositoryImpl @Inject constructor(
         tracksTable
     )
 
-    override fun save(entity: Category) {
+    fun save(entity: Category) {
         transaction {
             categoriesTable.insert { mapCategoryToRow(it, entity) }
         }
     }
 
-    override fun saveAll(entities: List<Category>) {
+    fun saveAll(entities: List<Category>) {
         TODO("Not yet implemented")
     }
 
@@ -58,13 +58,13 @@ class CategoryRepositoryImpl @Inject constructor(
             categoriesTable.selectAll().map {
                 val category: Category = it.mapRowToCategory()
                 category.copy(
-                    tracks = getChildrenByParent(category)
+//                    tracks = getChildrenByParent(category) // TODO: figure out Domain Model
                 )
             }
         }
     }
 
-    override fun getChildrenByParent(parent: Category): List<Track> {
+    fun getChildrenByParent(parent: Category): List<Track> {
         val categoryId: Int = parent.id
         val trackIds: List<Int> = transaction {
             categoriesToTracksTable

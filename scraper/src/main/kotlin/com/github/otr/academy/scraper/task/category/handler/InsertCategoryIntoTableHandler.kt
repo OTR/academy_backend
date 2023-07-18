@@ -1,15 +1,16 @@
-package data.scraper.task.category.handler
+package com.github.otr.academy.scraper.task.category.handler
 
-import data.mapper.CategoryRequestMapper
-import data.scraper.task.category.request.CategoryRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.mapper.CategoryRequestMapper
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertCategoryIntoTableHandler @Inject constructor(
+internal class InsertCategoryIntoTableHandler @Inject constructor(
     val repository: GenericRepository<Category>
 ): BaseCategoryHandler() {
 

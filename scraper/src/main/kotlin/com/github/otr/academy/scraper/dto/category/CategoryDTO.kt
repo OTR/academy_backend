@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class CategoryDTO(
+internal data class CategoryDTO(
 
     @SerializedName("id")
     var id: Int,

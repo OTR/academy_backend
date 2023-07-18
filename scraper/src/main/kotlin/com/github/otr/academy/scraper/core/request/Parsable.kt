@@ -1,9 +1,9 @@
-package data.scraper.core.request
+package com.github.otr.academy.scraper.core.request
 
 /**
  *
  */
-interface Parsable<T> {
+internal interface Parsable<T> {
 
     val dto: T?
 

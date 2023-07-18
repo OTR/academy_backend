@@ -1,13 +1,13 @@
-package data.scraper.task.page_with_steps.request
+package com.github.otr.academy.scraper.task.page_with_steps.request
 
-import data.scraper.dto.step.StepDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.THREE_HUNDRED_BYTES
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.THREE_HUNDRED_BYTES
+import com.github.otr.academy.scraper.dto.step.StepDTO
 
 /**
  *
  */
-data class PageWithStepsRequest(
+internal data class PageWithStepsRequest(
     override val type: PageWithStepsRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,

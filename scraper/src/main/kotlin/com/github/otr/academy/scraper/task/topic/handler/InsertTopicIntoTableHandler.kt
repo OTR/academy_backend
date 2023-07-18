@@ -1,18 +1,19 @@
-package data.scraper.task.topic.handler
+package com.github.otr.academy.scraper.task.topic.handler
 
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.scraper.dto.topic.TopicDTO
-import data.scraper.task.topic.request.TopicRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.dto.topic.TopicDTO
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertTopicIntoTableHandler @Inject constructor(
+internal class InsertTopicIntoTableHandler @Inject constructor(
     private val repository: GenericRepository<Topic>,
-    private val mapper: GenericDtoToDomainMapper<Topic, TopicDTO>
+    private val mapper: GenericDtoMapper<Topic, TopicDTO>
 ) : BaseTopicHandler() {
 
     override val handlerName: String = "INSERT topic INTO topics table;"

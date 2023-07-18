@@ -1,18 +1,19 @@
-package data.scraper.task.project.handler
+package com.github.otr.academy.scraper.task.project.handler
 
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.scraper.dto.project.ProjectDTO
-import data.scraper.task.project.request.ProjectRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.dto.project.ProjectDTO
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertProjectIntoTableHandler @Inject constructor(
+internal class InsertProjectIntoTableHandler @Inject constructor(
     private val repository: GenericRepository<Project>,
-    private val mapper: GenericDtoToDomainMapper<Project, ProjectDTO>
+    private val mapper: GenericDtoMapper<Project, ProjectDTO>
 ): BaseProjectHandler() {
 
     override val handlerName: String = "INSERT Project INTO projects table;"

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class TopicContainerDTO(
+internal data class TopicContainerDTO(
 
     @SerializedName("topics")
     var topics: ArrayList<TopicDTO>

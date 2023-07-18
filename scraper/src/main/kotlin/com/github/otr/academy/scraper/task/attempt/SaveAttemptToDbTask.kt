@@ -1,20 +1,19 @@
-package data.scraper.task.attempt
+package com.github.otr.academy.scraper.task.attempt
 
-import data.mapper.dto_to_domain.DatasetDtoToDomainMapperImpl
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.dto.attempt.DatasetDTO
-import data.scraper.task.attempt.handler.GetAttemptFromTableHandler
-import data.scraper.task.attempt.handler.InsertAttemptIntoTableHandler
-import data.scraper.task.attempt.request.AttemptRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.domain.model.AttemptDataset
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.dto.attempt.DatasetDTO
+import com.github.otr.academy.scraper.mapper.DatasetMapper
+import com.github.otr.academy.scraper.task.attempt.handler.GetAttemptFromTableHandler
+import com.github.otr.academy.scraper.task.attempt.handler.InsertAttemptIntoTableHandler
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
 
 /**
  *
  */
-class SaveAttemptToDbTask(
+internal class SaveAttemptToDbTask(
     private val request: AttemptRequest
 ) : BaseTask {
 
@@ -25,7 +24,7 @@ class SaveAttemptToDbTask(
     private val firstCheckExistence: GetAttemptFromTableHandler = component.getAttemptFromTableHandler()
     private val secondCheckExistence: GetAttemptFromTableHandler = component.getAttemptFromTableHandler()
     private val insertAttemptIntoTable: InsertAttemptIntoTableHandler = component.getInsertAttemptIntoTableHandler()
-    private val mapper: DatasetDtoToDomainMapperImpl = component.getDatasetDtoToDomainMapperImpl()
+    private val mapper: DatasetMapper = component.getDatasetDtoToDomainMapperImpl()
 
     override fun buildChainOfHandlers(): Handler<AttemptRequest> {
         val chain = firstCheckExistence.setNext(

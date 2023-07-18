@@ -1,7 +1,7 @@
-package data.database
-
+package com.github.otr.academy.db_details.exposed.database
 
 import com.github.otr.academy.db_details.exposed.config.Config
+
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.Table
@@ -14,7 +14,7 @@ import java.sql.Connection
  * For in-memory database use the following url
  * "jdbc:sqlite:file:test?mode=memory&cache=shared"
  */
-class SQLiteDatabaseFactory(
+internal class SQLiteDatabaseFactory(
     pathToDatabase: String? = null
 ) {
     private val pathToDatabase: String = pathToDatabase ?: Config.getPathToDatabase()

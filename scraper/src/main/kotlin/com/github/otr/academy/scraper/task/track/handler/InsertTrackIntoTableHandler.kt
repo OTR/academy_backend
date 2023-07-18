@@ -1,17 +1,19 @@
-package data.scraper.task.track.handler
+package com.github.otr.academy.scraper.task.track.handler
 
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.scraper.dto.track.TrackDTO
-import data.scraper.task.track.request.TrackRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.dto.track.TrackDTO
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
+
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertTrackIntoTableHandler @Inject constructor(
+internal class InsertTrackIntoTableHandler @Inject constructor(
     private val repository: GenericRepository<Track>,
-    private val mapper: GenericDtoToDomainMapper<Track, TrackDTO>
+    private val mapper: GenericDtoMapper<Track, TrackDTO>
 ) : BaseTrackHandler() {
 
     override val handlerName: String = "INSERT Track INTO database"

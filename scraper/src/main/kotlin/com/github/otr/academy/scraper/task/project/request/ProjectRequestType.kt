@@ -1,6 +1,6 @@
-package data.scraper.task.project.request
+package com.github.otr.academy.scraper.task.project.request
 
-import data.scraper.core.request.BaseRequestType
+import com.github.otr.academy.scraper.core.request.BaseRequestType
 
 import java.net.URL
 
@@ -10,7 +10,7 @@ import kotlin.io.path.pathString
 /**
  *
  */
-class ProjectRequestType(
+internal class ProjectRequestType(
     override val id: Int
 ) : BaseRequestType() {
 

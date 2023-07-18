@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class BlockDTO(
+internal data class BlockDTO(
 
     @SerializedName("name")
     val name: String?,

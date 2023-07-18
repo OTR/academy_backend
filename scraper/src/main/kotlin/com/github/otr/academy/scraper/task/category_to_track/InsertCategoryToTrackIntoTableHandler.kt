@@ -1,17 +1,17 @@
-package data.scraper.task.category_to_track
+package com.github.otr.academy.scraper.task.category_to_track
 
-import data.mapper.CategoryRequestMapper
-import data.repository.parent_children.CategoryToTrackRepositoryImpl
-import data.scraper.task.category.handler.BaseCategoryHandler
-import data.scraper.task.category.request.CategoryRequest
+import com.github.otr.academy.scraper.mapper.CategoryRequestMapper
+import com.github.otr.academy.scraper.task.category.handler.BaseCategoryHandler
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertCategoryToTrackIntoTableHandler @Inject constructor(
-    val repository: CategoryToTrackRepositoryImpl
+internal class InsertCategoryToTrackIntoTableHandler @Inject constructor(
+    private val repository: CategoryToTrackRepositoryImpl,
+    private val mapper: CategoryRequestMapper = CategoryRequestMapper()
 ) : BaseCategoryHandler() {
 
     override val handlerName: String = "Insert Category To Track Into Database Table"
@@ -21,7 +21,6 @@ class InsertCategoryToTrackIntoTableHandler @Inject constructor(
     }
 
     override fun handle(request: CategoryRequest): CategoryRequest {
-        val mapper: CategoryRequestMapper = CategoryRequestMapper()
         val categoryToTracks: Pair<Int, List<Int>> = mapper.mapToCategoryToTracks(request)
         repository.saveAll(categoryToTracks)
 

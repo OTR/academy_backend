@@ -1,9 +1,10 @@
-package data.scraper.task.stage.handler
+package com.github.otr.academy.scraper.task.stage.handler
 
-import data.scraper.core.handler.BaseGenericHandler
-import data.scraper.task.stage.request.StageRequest
+import com.github.otr.academy.scraper.core.handler.BaseGenericHandler
+import com.github.otr.academy.scraper.task.stage.request.StageRequest
+
 
 /**
  *
  */
-abstract class BaseStageHandler : BaseGenericHandler<StageRequest>()
+internal abstract class BaseStageHandler : BaseGenericHandler<StageRequest>()

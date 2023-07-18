@@ -1,8 +1,8 @@
-package data.scraper.task.track
+package com.github.otr.academy.scraper.task.track
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.task.BaseLoadTask
-import data.scraper.task.track.request.TrackRequest
+import com.github.otr.academy.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
 import kotlin.reflect.KClass
 
@@ -10,7 +10,9 @@ import kotlin.reflect.KClass
 /**
  *
  */
-class LoadTrackFromRemoteTask(request: TrackRequest) : BaseLoadTask<TrackRequest>(request) {
+internal class LoadTrackFromRemoteTask(
+    request: TrackRequest
+) : BaseLoadTask<TrackRequest>(request) {
 
     override fun positiveResponse(): KClass<out BaseTask> {
         return ParseTrackTask::class

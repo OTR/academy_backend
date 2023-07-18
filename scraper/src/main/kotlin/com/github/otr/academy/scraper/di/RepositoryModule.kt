@@ -1,26 +1,22 @@
-package di
+package com.github.otr.academy.scraper.di
+
+import com.github.otr.academy.domain.model.Attempt
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.domain.repository.StepRepository
 
 import dagger.Binds
 import dagger.Module
-
-import data.repository.AttemptRepositoryImpl
-import data.repository.CategoryRepositoryImpl
-import data.repository.ProjectRepositoryImpl
-import data.repository.StageRepositoryImpl
-import data.repository.StepRepositoryImpl
-import data.repository.TopicRepositoryImpl
-import data.repository.TrackRepositoryImpl
-
-import domain.model.Attempt
-
-import domain.repository.GenericRepository
-import domain.repository.StepRepository
 
 /**
  *
  */
 @Module
-interface RepositoryModule {
+internal interface RepositoryModule {
 
     @Binds
     fun bindAttemptsRepository(

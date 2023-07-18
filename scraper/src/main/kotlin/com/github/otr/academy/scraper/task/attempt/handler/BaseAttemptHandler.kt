@@ -1,9 +1,9 @@
-package data.scraper.task.attempt.handler
+package com.github.otr.academy.scraper.task.attempt.handler
 
-import data.scraper.core.handler.BaseGenericHandler
-import data.scraper.task.attempt.request.AttemptRequest
+import com.github.otr.academy.scraper.core.handler.BaseGenericHandler
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
 
 /**
  *
  */
-abstract class BaseAttemptHandler : BaseGenericHandler<AttemptRequest>()
+internal abstract class BaseAttemptHandler : BaseGenericHandler<AttemptRequest>()

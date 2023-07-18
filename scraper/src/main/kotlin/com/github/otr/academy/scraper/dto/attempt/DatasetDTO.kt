@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class DatasetDTO(
+internal data class DatasetDTO(
 
     @SerializedName("is_multiple_choice")
     val isMultipleChoice: Boolean?,

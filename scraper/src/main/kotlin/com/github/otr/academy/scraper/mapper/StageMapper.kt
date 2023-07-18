@@ -9,9 +9,9 @@ import javax.inject.Inject
 /**
  *
  */
-class StageDtoToDomainMapperImpl @Inject constructor(
+internal class StageMapper @Inject constructor(
 
-) : GenericDtoToDomainMapper<Stage, StageDTO> {
+) : GenericDtoMapper<Stage, StageDTO> {
 
     companion object {
 

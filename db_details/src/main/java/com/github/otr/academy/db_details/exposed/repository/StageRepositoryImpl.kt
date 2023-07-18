@@ -1,14 +1,13 @@
-package data.repository
+package com.github.otr.academy.db_details.exposed.repository
 
-import data.database.SQLiteDatabaseFactory
-import data.table.StagesTable
-import data.table.StagesTable.mapRowToStage
-import data.table.StagesTable.stageId
-import data.table.StagesTable.stageProject
-import domain.model.Project
-import domain.model.Stage
-import domain.repository.GenericParentChildrenRepository
-import domain.repository.GenericRepository
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.StagesTable
+import com.github.otr.academy.db_details.exposed.dbo.StagesTable.mapRowToStage
+import com.github.otr.academy.db_details.exposed.dbo.StagesTable.stageId
+import com.github.otr.academy.db_details.exposed.dbo.StagesTable.stageProject
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.domain.repository.GenericRepository
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.insert
@@ -44,6 +43,14 @@ class StageRepositoryImpl @Inject constructor(
                 .map { it.mapRowToStage() }
                 .singleOrNull()
         }
+    }
+
+    override fun deleteById(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun update(entity: Stage): Stage {
+        TODO("Not yet implemented")
     }
 
     override fun getAll(): List<Stage> {

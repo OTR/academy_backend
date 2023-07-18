@@ -1,11 +1,12 @@
-package com.github.otr.academy.scraper
+package com.github.otr.academy.scraper.presentation
 
-import data.config.Config
-import data.logging.MyLogger
-import data.mapper.blank.ProjectRequestFactory
-import data.scraper.core.task.BaseTask
-import data.scraper.task.project.ParseProjectTask
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.config.Config
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.request_factory.ProjectRequestFactory
+import com.github.otr.academy.scraper.task.project.ParseProjectTask
+
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 import java.util.Stack
 import javax.inject.Inject
@@ -18,8 +19,8 @@ import kotlin.io.path.walk
 /**
  *
  */
-class Crawler @Inject constructor(
-    private val logger: MyLogger
+internal class Crawler @Inject constructor(
+    private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 ) {
 
     companion object {
@@ -63,14 +64,14 @@ class Crawler @Inject constructor(
         logger.warn(getEndingMessage())
     }
 
-    fun pushTask(task: BaseTask) {
+    private fun pushTask(task: BaseTask) {
         taskStack.push(task)
     }
 
 }
 
 @OptIn(ExperimentalPathApi::class)
-fun main() {
+internal fun main() {
     val crawler = DaggerApplicationComponent.create().getCrawler()
 //    crawler.pushTask(ParseCategoriesTask())
 //    val practiceIds = StepRepositoryImpl.getAllPracticeStepsIds()
@@ -86,7 +87,7 @@ fun main() {
 //        )
 //    }
 
-
+    // TODO: Inject Config
     val pathToProjects = Path(Config.getPathToCacheDir())
         .resolve("api")
         .resolve("projects")

@@ -1,16 +1,20 @@
-package data.scraper.task.attempt.handler
+package com.github.otr.academy.scraper.task.attempt.handler
 
-import data.config.Config
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.cache_handler.Cacheable
-import domain.repository.StepRepository
+import com.github.otr.academy.domain.repository.StepRepository
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.config.Config
 
 import org.jsoup.Connection.Response
 
 import javax.inject.Inject
 
-class LoadAttemptSourceJsonHandler @Inject constructor(
-    repository: StepRepository
+/**
+ *
+ */
+internal class LoadAttemptSourceJsonHandler @Inject constructor(
+    repository: StepRepository,
+    // TODO: Inject Config and replace JSoup with P2I
 ) : BaseCacheHandler() {
 
     override val handlerName: String = "Load Source JSON from remote server"

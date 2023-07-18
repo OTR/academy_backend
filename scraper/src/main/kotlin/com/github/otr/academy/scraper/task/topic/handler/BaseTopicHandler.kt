@@ -1,9 +1,9 @@
-package data.scraper.task.topic.handler
+package com.github.otr.academy.scraper.task.topic.handler
 
-import data.scraper.core.handler.BaseGenericHandler
-import data.scraper.task.topic.request.TopicRequest
+import com.github.otr.academy.scraper.core.handler.BaseGenericHandler
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 /**
  *
  */
-abstract class BaseTopicHandler : BaseGenericHandler<TopicRequest>()
+internal abstract class BaseTopicHandler : BaseGenericHandler<TopicRequest>()

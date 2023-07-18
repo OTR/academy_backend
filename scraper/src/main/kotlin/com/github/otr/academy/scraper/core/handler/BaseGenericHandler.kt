@@ -1,13 +1,15 @@
-package data.scraper.core.handler
+package com.github.otr.academy.scraper.core.handler
 
-import data.logging.MyLogger
-import data.scraper.core.request.CanBeRequested
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.request.CanBeRequested
+import org.slf4j.Logger
+
+import org.slf4j.LoggerFactory
+
 
 /**
  *
  */
-abstract class BaseGenericHandler <T: CanBeRequested> : Handler<T> {
+internal abstract class BaseGenericHandler <T: CanBeRequested> : Handler<T> {
 
     companion object {
 
@@ -16,7 +18,7 @@ abstract class BaseGenericHandler <T: CanBeRequested> : Handler<T> {
 
     abstract override val handlerName: String
 
-    override var logger: MyLogger = DaggerApplicationComponent.create().getLogger()
+    override var logger: Logger = LoggerFactory.getLogger(this::class.java) // TODO: Replace with AOT
 
     override var next: Handler<T> = TerminalHandler()
 

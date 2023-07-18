@@ -1,14 +1,15 @@
-package data.scraper.task.track.handler
+package com.github.otr.academy.scraper.task.track.handler
 
-import data.scraper.task.track.request.TrackRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class GetTrackFromTableHandler @Inject constructor(
+internal class GetTrackFromTableHandler @Inject constructor(
     private val repository: GenericRepository<Track>
 ) : BaseTrackHandler() {
 

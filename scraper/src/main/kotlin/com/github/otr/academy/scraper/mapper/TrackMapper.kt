@@ -2,6 +2,7 @@ package com.github.otr.academy.scraper.mapper
 
 import com.github.otr.academy.domain.model.Project
 import com.github.otr.academy.domain.model.Track
+
 import com.github.otr.academy.scraper.dto.track.TrackDTO
 
 import javax.inject.Inject
@@ -9,9 +10,9 @@ import javax.inject.Inject
 /**
  *
  */
-class TrackDtoToDomainMapperImpl @Inject constructor(
+internal class TrackMapper @Inject constructor(
 
-) : GenericDtoToDomainMapper<Track, TrackDTO> {
+) : GenericDtoMapper<Track, TrackDTO> {
 
     companion object {
 

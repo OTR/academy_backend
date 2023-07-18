@@ -1,15 +1,16 @@
-package data.scraper.task.categories.request
+package com.github.otr.academy.scraper.task.categories.request
 
-import data.scraper.core.request.BaseRequestType
+import com.github.otr.academy.scraper.core.request.BaseRequestType
 
 import java.net.URL
+
 import kotlin.io.path.Path
 import kotlin.io.path.pathString
 
 /**
  *
  */
-object CategoriesRequestType : BaseRequestType() {
+internal object CategoriesRequestType : BaseRequestType() {
 
     override val id: Int = 1
 

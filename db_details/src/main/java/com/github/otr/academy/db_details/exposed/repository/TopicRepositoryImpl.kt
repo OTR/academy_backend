@@ -1,11 +1,11 @@
-package data.repository
+package com.github.otr.academy.db_details.exposed.repository
 
-import data.database.SQLiteDatabaseFactory
-import data.table.TopicsTable
-import data.table.TopicsTable.mapRowToTopic
-import data.table.TopicsTable.topicId
-import domain.model.Topic
-import domain.repository.GenericRepository
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.TopicsTable
+import com.github.otr.academy.db_details.exposed.dbo.TopicsTable.mapRowToTopic
+import com.github.otr.academy.db_details.exposed.dbo.TopicsTable.topicId
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.domain.repository.GenericRepository
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.insert
@@ -18,21 +18,23 @@ import javax.inject.Inject
 /**
  *
  */
-class TopicRepositoryImpl @Inject constructor(
+internal class TopicRepositoryImpl @Inject constructor(
 
 ) : GenericRepository<Topic> {
 
     private val table: TopicsTable = TopicsTable
     private val database: Database = SQLiteDatabaseFactory().init(table)
 
-    override fun save(entity: Topic) {
+    override fun save(entity: Topic): Topic {
 
         transaction {
             table.insert { mapTopicToRow(it, entity) }
         }
+        // FIXME: SELECT FROM TABLE
+        return entity
     }
 
-    override fun saveAll(entities: List<Topic>) {
+    fun saveAll(entities: List<Topic>) {
         TODO("Not yet implemented")
     }
 
@@ -42,6 +44,14 @@ class TopicRepositoryImpl @Inject constructor(
                 .map { it.mapRowToTopic() }
                 .singleOrNull()
         }
+    }
+
+    override fun deleteById(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun update(entity: Topic): Topic {
+        TODO("Not yet implemented")
     }
 
     override fun getAll(): List<Topic> {

@@ -1,20 +1,20 @@
-package data.scraper.task.attempt
+package com.github.otr.academy.scraper.task.attempt
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseParseTask
-import data.scraper.task.attempt.handler.ParseJsonAttemptHandler
-import data.scraper.task.attempt.request.AttemptRequest
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseParseTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.task.attempt.handler.ParseJsonAttemptHandler
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
 
 /**
  *
  */
-class ParseAttemptTask(
+internal class ParseAttemptTask(
     private val request: AttemptRequest
 ) : BaseParseTask<AttemptRequest>(request) {
 
-    override val parseJsonHandler: Handler<Cacheable> = ParseJsonAttemptHandler
+    override val parseJsonHandler: Handler<Cacheable> = ParseJsonAttemptHandler()
 
     override fun process(): Pair<Boolean, List<BaseTask>> {
         val chain = buildChainOfHandlers()

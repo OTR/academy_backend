@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class TrackDTO (
+internal data class TrackDTO (
 
     @SerializedName("id")
     val id: Int?,

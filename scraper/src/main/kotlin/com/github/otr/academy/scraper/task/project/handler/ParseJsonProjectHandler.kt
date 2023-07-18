@@ -1,20 +1,20 @@
-package data.scraper.task.project.handler
+package com.github.otr.academy.scraper.task.project.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.project.ProjectContainerDTO
+import com.github.otr.academy.scraper.dto.project.ProjectDTO
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 import com.google.gson.Gson
-
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.project.ProjectContainerDTO
-import data.scraper.dto.project.ProjectDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.project.request.ProjectRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class ParseJsonProjectHandler @Inject constructor(
-
+internal class ParseJsonProjectHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
 ) : BaseCacheHandler() {
 
     override val handlerName: String = "Parse JSON to Project domain entity"
@@ -32,8 +32,8 @@ class ParseJsonProjectHandler @Inject constructor(
             .fromJson(rawJson, ProjectContainerDTO::class.java)
 
         val projectDTO: ProjectDTO = projectContainerDTO.projects.first()
-
-        val response = (request as ProjectRequest).copy(dto = projectDTO) // TODO: Remove type casts
+        // TODO: Remove type casts
+        val response = (request as ProjectRequest).copy(dto = projectDTO)
 
         return response
     }

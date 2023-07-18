@@ -1,17 +1,18 @@
-package com.github.otr.academy.scraper
+package com.github.otr.academy.scraper.mapper
 
-import data.scraper.task.category.request.CategoryRequest
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
 
 /**
  *
  */
-class CategoryRequestMapper {
+internal class CategoryRequestMapper {
 
     fun mapToCategory(request: CategoryRequest) = Category(
         id = request.type.id,
         title = request.title,
         description = request.description,
-        tracks = emptyList()
+//        tracks = emptyList() // TODO: deal with Domain Model
     )
 
     fun mapToCategoryToTracks(request: CategoryRequest): Pair<Int, List<Int>> {

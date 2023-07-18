@@ -1,22 +1,20 @@
-package data.scraper.task.track
+package com.github.otr.academy.scraper.task.track
 
-import data.mapper.blank.ProjectRequestFactory
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.datasource.ALPHA_PROJECTS
-import data.scraper.task.project.LoadProjectFromRemoteTask
-import data.scraper.task.track.handler.GetTrackFromTableHandler
-import data.scraper.task.track.handler.InsertTrackIntoTableHandler
-import data.scraper.task.track.request.TrackRequest
-import data.scraper.task.track_to_project.SaveTrackToProjectTask
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.datasource.ALPHA_PROJECTS
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.request_factory.ProjectRequestFactory
+import com.github.otr.academy.scraper.task.project.LoadProjectFromRemoteTask
+import com.github.otr.academy.scraper.task.track.handler.GetTrackFromTableHandler
+import com.github.otr.academy.scraper.task.track.handler.InsertTrackIntoTableHandler
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
+import com.github.otr.academy.scraper.task.track_to_project.SaveTrackToProjectTask
 
 /**
  *
  */
-class SaveTrackToDbTask(val request: TrackRequest) : BaseTask {
+internal class SaveTrackToDbTask(val request: TrackRequest) : BaseTask {
 
     override val fullTaskName: String = "INSERT Track ${request.type.id} as Row INTO tracks database"
 

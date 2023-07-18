@@ -13,6 +13,9 @@ dependencies {
     // Gson
     implementation("com.google.code.gson:gson:2.10.1")
 
+    // Jsoup
+    implementation("org.jsoup:jsoup:1.16.1")
+
     // Logback Classic SLF4J binding
     implementation("ch.qos.logback:logback-classic:1.3.6")
 

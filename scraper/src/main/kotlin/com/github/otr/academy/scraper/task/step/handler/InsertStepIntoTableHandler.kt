@@ -1,18 +1,19 @@
-package data.scraper.task.step.handler
+package com.github.otr.academy.scraper.task.step.handler
 
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.scraper.dto.step.StepDTO
-import data.scraper.task.step.request.StepRequest
-import domain.repository.StepRepository
+import com.github.otr.academy.domain.model.Step
+import com.github.otr.academy.domain.repository.StepRepository
+import com.github.otr.academy.scraper.dto.step.StepDTO
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.task.step.request.StepRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertStepIntoTableHandler @Inject constructor(
+internal class InsertStepIntoTableHandler @Inject constructor(
     private val repository: StepRepository,
-    private val mapper: GenericDtoToDomainMapper<Step, StepDTO>
+    private val mapper: GenericDtoMapper<Step, StepDTO>
 ) : BaseStepHandler() {
 
     override val handlerName: String = "INSERT step INTO steps table;"

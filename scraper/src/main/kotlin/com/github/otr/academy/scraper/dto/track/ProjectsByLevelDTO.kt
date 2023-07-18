@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class ProjectsByLevelDTO (
+internal data class ProjectsByLevelDTO (
 
     @SerializedName("easy")
     var easy: ArrayList<Int>?,

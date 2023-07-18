@@ -1,18 +1,16 @@
-package data.scraper.task.project
+package com.github.otr.academy.scraper.task.project
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseParseTask
-import data.scraper.task.project.request.ProjectRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseParseTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 /**
  *
  */
-class ParseProjectTask(
+internal class ParseProjectTask(
     private val request: ProjectRequest
 ) : BaseParseTask<ProjectRequest>(request) {
 

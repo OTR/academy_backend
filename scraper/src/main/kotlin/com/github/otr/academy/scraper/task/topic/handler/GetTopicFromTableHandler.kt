@@ -1,14 +1,15 @@
-package data.scraper.task.topic.handler
+package com.github.otr.academy.scraper.task.topic.handler
 
-import data.scraper.task.topic.request.TopicRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class GetTopicFromTableHandler @Inject constructor(
+internal class GetTopicFromTableHandler @Inject constructor(
     val repository: GenericRepository<Topic>
 ) : BaseTopicHandler() {
 

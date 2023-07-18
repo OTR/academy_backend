@@ -1,15 +1,16 @@
-package data.scraper.task.step.handler
+package com.github.otr.academy.scraper.task.step.handler
 
-import data.repository.StepRepositoryImpl
-import data.scraper.task.step.request.StepRequest
+import com.github.otr.academy.domain.model.Step
+import com.github.otr.academy.domain.repository.StepRepository
+import com.github.otr.academy.scraper.task.step.request.StepRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class GetStepFromTableHandler @Inject constructor(
-    private val repository: StepRepositoryImpl
+internal class GetStepFromTableHandler @Inject constructor(
+    private val repository: StepRepository
 ): BaseStepHandler() {
 
     override val handlerName: String = "Try to SELECT Step FROM Steps table;"

@@ -1,13 +1,13 @@
-package data.scraper.task.stage.deprecated.handler
+package com.github.otr.academy.scraper.task.stage.deprecated.handler
 
-import data.scraper.dto.stage.StageDTO
-import data.scraper.task.stage.handler.BaseStageHandler
-import data.scraper.task.stage.request.StageRequest
+import com.github.otr.academy.scraper.dto.stage.StageDTO
+import com.github.otr.academy.scraper.task.stage.handler.BaseStageHandler
+import com.github.otr.academy.scraper.task.stage.request.StageRequest
 
 /**
  *
  */
-object ConvertStageToListOfTopicsHandler : BaseStageHandler() {
+internal object ConvertStageToListOfTopicsHandler : BaseStageHandler() {
 
     override val handlerName: String = "Convert Stage To List Of Steps"
 

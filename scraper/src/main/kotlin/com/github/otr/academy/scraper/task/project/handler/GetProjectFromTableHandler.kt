@@ -1,14 +1,15 @@
-package data.scraper.task.project.handler
+package com.github.otr.academy.scraper.task.project.handler
 
-import data.scraper.task.project.request.ProjectRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class GetProjectFromTableHandler @Inject constructor(
+internal class GetProjectFromTableHandler @Inject constructor(
     private val repository: GenericRepository<Project>
 ) : BaseProjectHandler() {
 

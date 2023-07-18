@@ -1,14 +1,14 @@
-package data.scraper.task.stage.deprecated.request
+package com.github.otr.academy.scraper.task.stage.deprecated.request
 
-import data.scraper.core.request.CanBeRequested
-import data.scraper.dto.stage.StageDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.KILOBYTE
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.KILOBYTE
+import com.github.otr.academy.scraper.core.request.CanBeRequested
+import com.github.otr.academy.scraper.dto.stage.StageDTO
 
 /**
  *
  */
-data class StagesForProjectRequest(
+internal data class StagesForProjectRequest(
     override val type: StagesForProjectRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,

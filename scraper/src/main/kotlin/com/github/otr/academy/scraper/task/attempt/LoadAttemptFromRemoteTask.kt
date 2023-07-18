@@ -1,20 +1,19 @@
-package data.scraper.task.attempt
+package com.github.otr.academy.scraper.task.attempt
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseLoadTask
-import data.scraper.task.attempt.request.AttemptRequest
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
 
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
 
 import kotlin.reflect.KClass
 
 /**
  *
  */
-class LoadAttemptFromRemoteTask(request: AttemptRequest) : BaseLoadTask<AttemptRequest>(request) {
+internal class LoadAttemptFromRemoteTask(request: AttemptRequest) : BaseLoadTask<AttemptRequest>(request) {
 
     private val component: ApplicationComponent = DaggerApplicationComponent.create()
 

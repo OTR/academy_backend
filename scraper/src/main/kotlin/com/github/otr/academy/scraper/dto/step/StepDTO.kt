@@ -1,13 +1,11 @@
 package com.github.otr.academy.scraper.dto.step
 
-import com.github.otr.academy.scraper.dto.step.BlockDTO
-import com.github.otr.academy.scraper.dto.step.CommentsStatisticsDTO
 import com.google.gson.annotations.SerializedName
 
 /**
  *
  */
-data class StepDTO(
+internal data class StepDTO(
 
     @SerializedName("id")
     val id: Int?,

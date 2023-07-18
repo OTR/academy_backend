@@ -1,18 +1,16 @@
-package data.scraper.task.track
+package com.github.otr.academy.scraper.task.track
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseParseTask
-import data.scraper.task.track.request.TrackRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseParseTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
 /**
  *
  */
-class ParseTrackTask(
+internal class ParseTrackTask(
     val request: TrackRequest
 ) : BaseParseTask<TrackRequest>(request) {
 

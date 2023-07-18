@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class StepContainerDTO(
+internal data class StepContainerDTO(
 
     @SerializedName("steps")
     val steps: ArrayList<StepDTO>

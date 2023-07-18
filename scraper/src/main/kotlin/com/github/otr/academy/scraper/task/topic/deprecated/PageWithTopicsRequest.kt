@@ -1,13 +1,13 @@
-package data.scraper.task.topic.deprecated
+package com.github.otr.academy.scraper.task.topic.deprecated
 
-import data.scraper.core.request.CanBeRequested
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.KILOBYTE
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.KILOBYTE
+import com.github.otr.academy.scraper.core.request.CanBeRequested
 
 /**
  *
  */
-data class PageWithTopicsRequest(
+internal data class PageWithTopicsRequest(
     override val type: PageWithTopicsRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class StageDTO(
+internal data class StageDTO(
 
     @SerializedName("id")
     val id: Int?,

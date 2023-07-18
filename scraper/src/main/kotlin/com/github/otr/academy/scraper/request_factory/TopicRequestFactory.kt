@@ -1,12 +1,12 @@
 package com.github.otr.academy.scraper.request_factory
 
-import data.scraper.task.topic.request.TopicRequest
-import data.scraper.task.topic.request.TopicRequestType
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
+import com.github.otr.academy.scraper.task.topic.request.TopicRequestType
 
 /**
  *
  */
-object TopicRequestFactory {
+internal object TopicRequestFactory {
 
     fun getBlankTopicRequest(
         topicId: Int,

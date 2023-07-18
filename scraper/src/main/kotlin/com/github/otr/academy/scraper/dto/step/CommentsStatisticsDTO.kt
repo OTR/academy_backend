@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class CommentsStatisticsDTO(
+internal data class CommentsStatisticsDTO(
 
     @SerializedName("thread")
     var thread: String?,

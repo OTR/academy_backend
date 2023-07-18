@@ -1,12 +1,14 @@
-package data.scraper.task.track_to_project
+package com.github.otr.academy.scraper.task.track_to_project
 
-import data.repository.parent_children.TrackToProjectRepositoryImpl
-import data.scraper.task.track.handler.BaseTrackHandler
-import data.scraper.task.track.request.TrackRequest
+import com.github.otr.academy.scraper.task.track.handler.BaseTrackHandler
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
 import javax.inject.Inject
 
-class InsertTrackToProjectIntoTableHandler @Inject constructor(
+/**
+ *
+ */
+internal class InsertTrackToProjectIntoTableHandler @Inject constructor(
     private val repository: TrackToProjectRepositoryImpl
 ) : BaseTrackHandler() {
 

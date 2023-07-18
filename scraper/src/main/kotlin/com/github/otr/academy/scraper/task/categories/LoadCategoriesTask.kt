@@ -1,15 +1,15 @@
-package data.scraper.task.categories
+package com.github.otr.academy.scraper.task.categories
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.task.BaseLoadTask
-import data.scraper.task.categories.request.CategoriesRequest
+import com.github.otr.academy.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.task.categories.request.CategoriesRequest
 
 import kotlin.reflect.KClass
 
 /**
  * Load all tracks from exposed API via JSoup
  */
-class LoadCategoriesTask(
+internal class LoadCategoriesTask(
     private val request: CategoriesRequest
 ) : BaseLoadTask<CategoriesRequest>(request) {
 

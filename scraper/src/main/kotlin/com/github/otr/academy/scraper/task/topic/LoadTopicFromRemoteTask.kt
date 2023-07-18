@@ -1,16 +1,17 @@
-package data.scraper.task.topic
+package com.github.otr.academy.scraper.task.topic
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.task.BaseLoadTask
-import data.scraper.task.topic.request.TopicRequest
+import com.github.otr.academy.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 import kotlin.reflect.KClass
-
 
 /**
  *
  */
-class LoadTopicFromRemoteTask(request: TopicRequest) : BaseLoadTask<TopicRequest>(request) {
+internal class LoadTopicFromRemoteTask(
+    request: TopicRequest
+) : BaseLoadTask<TopicRequest>(request) {
 
     override fun positiveResponse(): KClass<out BaseTask> {
         return ParseTopicTask::class

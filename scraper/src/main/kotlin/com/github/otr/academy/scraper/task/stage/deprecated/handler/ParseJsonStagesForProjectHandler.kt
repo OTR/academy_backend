@@ -1,17 +1,21 @@
-package data.scraper.task.stage.deprecated.handler
+package com.github.otr.academy.scraper.task.stage.deprecated.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.stage.StageContainerDTO
+import com.github.otr.academy.scraper.dto.stage.StageDTO
+import com.github.otr.academy.scraper.task.stage.deprecated.request.StagesForProjectRequest
 
 import com.google.gson.Gson
 
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.stage.StageDTO
-import data.scraper.dto.stage.StageContainerDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.stage.deprecated.request.StagesForProjectRequest
+import javax.inject.Inject
 
 /**
  *
  */
-object ParseJsonStagesForProjectHandler: BaseCacheHandler() {
+internal class ParseJsonStagesForProjectHandler @Inject constructor(
+    // TODO: replace Gson with P2I
+): BaseCacheHandler() {
 
     override val handlerName: String = "Parse Stages for project"
 

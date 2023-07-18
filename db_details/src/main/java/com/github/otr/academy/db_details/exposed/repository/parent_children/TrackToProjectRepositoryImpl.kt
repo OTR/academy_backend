@@ -1,7 +1,7 @@
-package data.repository.parent_children
+package com.github.otr.academy.db_details.exposed.repository.parent_children
 
-import data.database.SQLiteDatabaseFactory
-import data.table.parent_child.TracksToProjectsTable
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.parent_child.TracksToProjectsTable
 
 import org.jetbrains.exposed.exceptions.ExposedSQLException
 import org.jetbrains.exposed.sql.Database

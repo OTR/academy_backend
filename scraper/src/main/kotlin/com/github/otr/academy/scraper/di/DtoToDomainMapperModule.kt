@@ -1,59 +1,64 @@
-package di
+package com.github.otr.academy.scraper.di
+
+import com.github.otr.academy.domain.model.Attempt
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.domain.model.Step
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.domain.model.Track
+
+import com.github.otr.academy.scraper.dto.attempt.AttemptDTO
+import com.github.otr.academy.scraper.dto.project.ProjectDTO
+import com.github.otr.academy.scraper.dto.stage.StageDTO
+import com.github.otr.academy.scraper.dto.step.StepDTO
+import com.github.otr.academy.scraper.dto.topic.TopicDTO
+import com.github.otr.academy.scraper.dto.track.TrackDTO
+
+import com.github.otr.academy.scraper.mapper.AttemptMapper
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.mapper.ProjectMapper
+import com.github.otr.academy.scraper.mapper.StageMapper
+import com.github.otr.academy.scraper.mapper.StepMapper
+import com.github.otr.academy.scraper.mapper.TopicMapper
+import com.github.otr.academy.scraper.mapper.TrackMapper
 
 import dagger.Binds
 import dagger.Module
-
-import data.mapper.dto_to_domain.AttemptDtoToDomainMapperImpl
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.mapper.dto_to_domain.ProjectDtoToDomainMapperImpl
-import data.mapper.dto_to_domain.StageDtoToDomainMapperImpl
-import data.mapper.dto_to_domain.StepDtoToDomainMapperImpl
-import data.mapper.dto_to_domain.TopicDtoToDomainMapperImpl
-import data.mapper.dto_to_domain.TrackDtoToDomainMapperImpl
-
-import data.scraper.dto.attempt.AttemptDTO
-import data.scraper.dto.project.ProjectDTO
-import data.scraper.dto.stage.StageDTO
-import data.scraper.dto.step.StepDTO
-import data.scraper.dto.topic.TopicDTO
-import data.scraper.dto.track.TrackDTO
-
-import domain.model.Attempt
 
 /**
  *
  */
 @Module
-interface DtoToDomainMapperModule {
+internal interface DtoToDomainMapperModule {
 
     @Binds
     fun bindAttemptDtoToDomainMapper(
-        impl: AttemptDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Attempt, AttemptDTO>
+        impl: AttemptMapper
+    ): GenericDtoMapper<Attempt, AttemptDTO>
 
     @Binds
     fun bindProjectDtoToDomainMapper(
-        impl: ProjectDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Project, ProjectDTO>
+        impl: ProjectMapper
+    ): GenericDtoMapper<Project, ProjectDTO>
 
     @Binds
     fun bindStageDtoToDomainMapper(
-        impl: StageDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Stage, StageDTO>
+        impl: StageMapper
+    ): GenericDtoMapper<Stage, StageDTO>
 
     @Binds
     fun bindStepDtoToDomainMapper(
-        impl: StepDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Step, StepDTO>
+        impl: StepMapper
+    ): GenericDtoMapper<Step, StepDTO>
 
     @Binds
     fun bindTopicDtoToDomainMapper(
-        impl: TopicDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Topic, TopicDTO>
+        impl: TopicMapper
+    ): GenericDtoMapper<Topic, TopicDTO>
 
     @Binds
     fun bindTrackDtoToDomainMapper(
-        impl: TrackDtoToDomainMapperImpl
-    ): GenericDtoToDomainMapper<Track, TrackDTO>
+        impl: TrackMapper
+    ): GenericDtoMapper<Track, TrackDTO>
 
 }

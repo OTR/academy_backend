@@ -1,8 +1,8 @@
-package data.scraper.task.page_with_steps
+package com.github.otr.academy.scraper.task.page_with_steps
 
-import data.scraper.core.task.BaseTask
-import data.scraper.task.page_with_steps.request.PageWithStepsRequest
-import data.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.task.page_with_steps.request.PageWithStepsRequest
+import com.github.otr.academy.scraper.core.task.BaseLoadTask
+import com.github.otr.academy.scraper.core.task.BaseTask
 
 import kotlin.reflect.KClass
 
@@ -10,7 +10,7 @@ import kotlin.reflect.KClass
 /**
  *
  */
-class LoadPageWithStepsTask(
+internal class LoadPageWithStepsTask(
     request: PageWithStepsRequest
 ) : BaseLoadTask<PageWithStepsRequest>(request) {
 

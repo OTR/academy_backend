@@ -1,20 +1,18 @@
-package data.scraper.task.topic
+package com.github.otr.academy.scraper.task.topic
 
-import data.mapper.blank.StepRequestFactory
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.step.LoadStepFromRemoteTask
-import data.scraper.task.topic.handler.GetTopicFromTableHandler
-import data.scraper.task.topic.handler.InsertTopicIntoTableHandler
-import data.scraper.task.topic.request.TopicRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.request_factory.StepRequestFactory
+import com.github.otr.academy.scraper.task.step.LoadStepFromRemoteTask
+import com.github.otr.academy.scraper.task.topic.handler.GetTopicFromTableHandler
+import com.github.otr.academy.scraper.task.topic.handler.InsertTopicIntoTableHandler
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 /**
  *
  */
-class SaveTopicToDbTask(
+internal class SaveTopicToDbTask(
     private val request: TopicRequest
 ) : BaseTask {
 

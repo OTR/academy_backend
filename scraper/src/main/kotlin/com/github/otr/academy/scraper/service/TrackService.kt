@@ -1,13 +1,13 @@
-package presentation.service
+package com.github.otr.academy.scraper.service
 
-import domain.use_case.track.GetAllTracksUseCase
-
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.use_case.track.GetAllTracksUseCase
 import javax.inject.Inject
 
 /**
  *
  */
-class TrackService @Inject constructor(
+internal class TrackService @Inject constructor(
     private val getAllTracksUseCase: GetAllTracksUseCase
 ) {
 

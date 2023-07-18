@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class AttemptContainerDTO(
+internal data class AttemptContainerDTO(
 
     @SerializedName("attempts")
     val attempts: ArrayList<AttemptDTO>

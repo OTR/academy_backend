@@ -1,6 +1,6 @@
-package data.scraper.task.topic.deprecated
+package com.github.otr.academy.scraper.task.topic.deprecated
 
-import data.scraper.core.request.BaseRequestType
+import com.github.otr.academy.scraper.core.request.BaseRequestType
 
 import java.net.URL
 
@@ -10,7 +10,7 @@ import kotlin.io.path.pathString
 /**
  *
  */
-class PageWithTopicsRequestType (
+internal class PageWithTopicsRequestType (
     override val id: Int
 ) : BaseRequestType() {
 

@@ -1,6 +1,6 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Project
+import com.github.otr.academy.domain.model.Project
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 /**
  *
  */
-object ProjectsTable : Table(name = "projects") {
+internal object ProjectsTable : Table(name = "projects") {
     val projectId = integer("project_id")
     val projectTitle = varchar("project_title", 255)
     val projectDescription = varchar("project_description", 2048)
@@ -42,7 +42,7 @@ object ProjectsTable : Table(name = "projects") {
         isPublic = this[isPublicProject],
         isIdeRequired = this[isIdeRequiredProject],
         stagesCount = this[projectStagesCount],
-        stagesIds = emptyList(),
+//        stagesIds = emptyList(), // TODO:
         readiness = this[projectReadiness]
     )
 

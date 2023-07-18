@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class AttemptDTO(
+internal data class AttemptDTO(
 
     @SerializedName("id")
     val id: Int?,

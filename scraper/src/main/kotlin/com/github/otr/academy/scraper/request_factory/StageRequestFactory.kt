@@ -1,13 +1,13 @@
 package com.github.otr.academy.scraper.request_factory
 
-import data.scraper.dto.stage.StageDTO
-import data.scraper.task.stage.request.StageRequest
-import data.scraper.task.stage.request.StageRequestType
+import com.github.otr.academy.scraper.dto.stage.StageDTO
+import com.github.otr.academy.scraper.task.stage.request.StageRequest
+import com.github.otr.academy.scraper.task.stage.request.StageRequestType
 
 /**
  *
  */
-object StageRequestFactory {
+internal object StageRequestFactory {
 
     fun getBlankStageRequest(stageId: Int) = StageRequest(
         type = StageRequestType(stageId),

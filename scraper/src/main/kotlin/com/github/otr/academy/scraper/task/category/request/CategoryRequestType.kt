@@ -1,11 +1,11 @@
-package data.scraper.task.category.request
+package com.github.otr.academy.scraper.task.category.request
 
-import data.scraper.core.request.BaseRequestType
+import com.github.otr.academy.scraper.core.request.BaseRequestType
 
 /**
  *
  */
-class CategoryRequestType(
+internal class CategoryRequestType(
     override val id: Int
 ) : BaseRequestType() {
 

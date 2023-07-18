@@ -1,12 +1,12 @@
 package com.github.otr.academy.scraper.request_factory
 
-import data.scraper.task.attempt.request.AttemptRequest
-import data.scraper.task.attempt.request.AttemptRequestType
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequestType
 
 /**
  *
  */
-object AttemptReqestFactory {
+internal object AttemptRequestFactory {
 
     fun getBlankAttemptRequest(
         stepId: Int,

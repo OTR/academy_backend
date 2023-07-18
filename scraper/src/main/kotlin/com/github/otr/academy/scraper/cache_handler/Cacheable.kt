@@ -1,13 +1,13 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
-import data.scraper.core.request.CanBeRequested
+import com.github.otr.academy.scraper.core.request.CanBeRequested
 
 /**
  * @param pathToCacheFile relative path on the disk where cache file is placed
  * @param isCacheExists whether cache file exists
  * @param sourceData source data to be written to cache file
  */
-interface Cacheable : CanBeRequested {
+internal interface Cacheable : CanBeRequested {
 
     companion object {
         const val ONE_HUNDRED_BYTES: Long = 100

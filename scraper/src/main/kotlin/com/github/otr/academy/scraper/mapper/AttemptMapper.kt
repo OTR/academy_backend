@@ -1,18 +1,18 @@
 package com.github.otr.academy.scraper.mapper
 
-
 import com.github.otr.academy.domain.model.Attempt
 import com.github.otr.academy.domain.model.AttemptDataset
 
 import com.github.otr.academy.scraper.dto.attempt.AttemptDTO
+
 import javax.inject.Inject
 
 /**
  *
  */
-class AttemptDtoToDomainMapperImpl @Inject constructor(
-    private val mapper: DatasetDtoToDomainMapperImpl
-) : GenericDtoToDomainMapper<Attempt, AttemptDTO> {
+internal class AttemptMapper @Inject constructor(
+    private val mapper: DatasetMapper
+) : GenericDtoMapper<Attempt, AttemptDTO> {
 
     override fun mapDtoToDomain(dto: AttemptDTO): Attempt {
         return if (

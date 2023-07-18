@@ -1,12 +1,12 @@
-package data.repository
+package com.github.otr.academy.db_details.exposed.repository
 
-import data.database.SQLiteDatabaseFactory
-import data.table.StepsTable
-import data.table.StepsTable.mapRowToStep
-import data.table.StepsTable.stepId
-import data.table.StepsTable.stepType
-import domain.model.Step
-import domain.repository.StepRepository
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.StepsTable
+import com.github.otr.academy.db_details.exposed.dbo.StepsTable.mapRowToStep
+import com.github.otr.academy.db_details.exposed.dbo.StepsTable.stepId
+import com.github.otr.academy.db_details.exposed.dbo.StepsTable.stepType
+import com.github.otr.academy.domain.model.Step
+import com.github.otr.academy.domain.repository.StepRepository
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
@@ -35,6 +35,10 @@ class StepRepositoryImpl @Inject constructor(
     }
 
     override fun saveAll(entities: List<Step>) {
+        TODO("Not yet implemented")
+    }
+
+    override fun update(entity: Step): Step {
         TODO("Not yet implemented")
     }
 
@@ -81,7 +85,7 @@ class StepRepositoryImpl @Inject constructor(
         }
     }
 
-    fun deleteById(id: Int) {
+    override fun deleteById(id: Int) {
         transaction {
             table.deleteWhere { stepId eq id }
         }

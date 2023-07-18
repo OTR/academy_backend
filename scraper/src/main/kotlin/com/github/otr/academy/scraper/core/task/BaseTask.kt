@@ -1,9 +1,9 @@
-package data.scraper.core.task
+package com.github.otr.academy.scraper.core.task
 
 /**
  *
  */
-interface BaseTask {
+internal interface BaseTask {
 
     val fullTaskName: String
 

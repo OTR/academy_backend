@@ -1,6 +1,7 @@
 package com.github.otr.academy.scraper.mapper
 
 import com.github.otr.academy.domain.model.Topic
+
 import com.github.otr.academy.scraper.dto.topic.TopicDTO
 
 import javax.inject.Inject
@@ -8,9 +9,9 @@ import javax.inject.Inject
 /**
  *
  */
-class TopicDtoToDomainMapperImpl @Inject constructor(
+internal class TopicMapper @Inject constructor(
 
-) : GenericDtoToDomainMapper<Topic, TopicDTO> {
+) : GenericDtoMapper<Topic, TopicDTO> {
 
     companion object {
 

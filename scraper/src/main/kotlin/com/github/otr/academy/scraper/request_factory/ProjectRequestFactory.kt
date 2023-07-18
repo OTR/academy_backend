@@ -1,12 +1,12 @@
 package com.github.otr.academy.scraper.request_factory
 
-import data.scraper.task.project.request.ProjectRequest
-import data.scraper.task.project.request.ProjectRequestType
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
+import com.github.otr.academy.scraper.task.project.request.ProjectRequestType
 
 /**
  *
  */
-object ProjectRequestFactory {
+internal object ProjectRequestFactory {
 
     fun getBlankProjectRequest(projectId: Int) = ProjectRequest(
         type = ProjectRequestType(projectId),

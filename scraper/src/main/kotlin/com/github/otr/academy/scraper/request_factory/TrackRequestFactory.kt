@@ -1,12 +1,12 @@
 package com.github.otr.academy.scraper.request_factory
 
-import data.scraper.task.track.request.TrackRequest
-import data.scraper.task.track.request.TrackRequestType
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
+import com.github.otr.academy.scraper.task.track.request.TrackRequestType
 
 /**
  *
  */
-object TrackRequestFactory {
+internal object TrackRequestFactory {
 
     fun getBlankTrackRequest(trackId: Int) = TrackRequest(
         type = TrackRequestType(trackId),

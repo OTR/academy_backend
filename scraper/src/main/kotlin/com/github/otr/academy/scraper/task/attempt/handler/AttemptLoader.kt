@@ -1,13 +1,18 @@
-package data.scraper.task.attempt.handler
+package com.github.otr.academy.scraper.task.attempt.handler
 
-import data.config.Config
+import com.github.otr.academy.scraper.config.Config
+
 import org.jsoup.Connection
 import org.jsoup.Jsoup
+
+import javax.inject.Inject
 
 /**
  *
  */
-internal object AttemptLoader {
+internal class AttemptLoader @Inject constructor(
+    // TODO: Inject config and Replace JSoup with P2I
+) {
 
     private var csrfToken: String = Config.getCsrfToken()
     private val cookies: MutableMap<String, String> = mutableMapOf("csrftoken" to csrfToken)

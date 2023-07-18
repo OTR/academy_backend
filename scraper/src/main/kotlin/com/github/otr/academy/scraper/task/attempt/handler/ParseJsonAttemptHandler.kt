@@ -1,17 +1,21 @@
-package data.scraper.task.attempt.handler
+package com.github.otr.academy.scraper.task.attempt.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.attempt.AttemptContainerDTO
+import com.github.otr.academy.scraper.dto.attempt.AttemptDTO
+import com.github.otr.academy.scraper.task.attempt.request.AttemptRequest
 
 import com.google.gson.Gson
 
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.attempt.AttemptContainerDTO
-import data.scraper.dto.attempt.AttemptDTO
-import data.scraper.task.attempt.request.AttemptRequest
-import data.scraper.cache_handler.Cacheable
+import javax.inject.Inject
 
 /**
  *
  */
-object ParseJsonAttemptHandler : BaseCacheHandler() {
+internal class ParseJsonAttemptHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
+) : BaseCacheHandler() {
 
     override val handlerName: String = "Parse JSON to Attempt DTO handler"
 
@@ -27,8 +31,8 @@ object ParseJsonAttemptHandler : BaseCacheHandler() {
             .fromJson(rawJson, AttemptContainerDTO::class.java)
 
         val attemptDTO: AttemptDTO = stepContainerDTO.attempts.first()
-
-        val response = (request as AttemptRequest).copy(dto = attemptDTO) // TODO: Remove type cast
+        // TODO: Remove type cast
+        val response = (request as AttemptRequest).copy(dto = attemptDTO)
 
         return response
     }

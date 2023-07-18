@@ -9,7 +9,7 @@ import kotlin.io.path.absolutePathString
 /**
  *
  */
-object Config {
+internal object Config {
 
     private var userName: String
     private var apiKey: String

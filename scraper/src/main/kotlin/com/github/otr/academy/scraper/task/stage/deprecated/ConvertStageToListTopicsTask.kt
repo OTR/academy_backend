@@ -1,16 +1,14 @@
-package data.scraper.task.stage.deprecated
-//
-//import data.scraper.core.task.BaseTask
-//import data.scraper.core.handler.Handler
-//import data.scraper.task.stage.deprecated.handler.ConvertStageToListOfTopicsHandler
-//import data.scraper.task.stage.request.StageRequest
-//
-///**
-// *
-// */
-//class ConvertStageToListTopicsTask(
+package com.github.otr.academy.scraper.task.stage.deprecated
+
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.task.stage.deprecated.handler.ConvertStageToListOfTopicsHandler
+
+/**
+ *
+ */
+//internal class ConvertStageToListTopicsTask(
 //    private val request: StageRequest
-//) : BaseTask {
+//) : com.github.otr.academy.scraper.core.task.BaseTask {
 //
 //    override val taskName: String = "Convert Topic To Stage"
 //
@@ -20,7 +18,7 @@ package data.scraper.task.stage.deprecated
 //        return chain
 //    }
 //
-//    override fun process(): Pair<Boolean, List<BaseTask>> {
+//    override fun process(): Pair<Boolean, List<com.github.otr.academy.scraper.core.task.BaseTask>> {
 //        val chain = buildChainOfHandlers()
 //        val response = chain(request)
 //

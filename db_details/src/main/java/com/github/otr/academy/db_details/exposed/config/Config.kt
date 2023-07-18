@@ -2,9 +2,13 @@ package com.github.otr.academy.db_details.exposed.config
 
 import java.io.FileInputStream
 import java.util.Properties
+
 import kotlin.io.path.Path
 import kotlin.io.path.absolutePathString
 
+/**
+ *
+ */
 internal object Config {
 
     private var databaseName: String

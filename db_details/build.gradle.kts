@@ -7,6 +7,8 @@ kapt {
 }
 
 dependencies {
+    
+    implementation(project(":domain"))
 
     // Exposed ORM framework
     implementation("org.jetbrains.exposed", "exposed-core", "0.40.1")

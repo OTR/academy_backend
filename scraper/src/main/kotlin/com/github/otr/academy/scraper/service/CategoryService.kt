@@ -1,6 +1,7 @@
-package presentation.service
+package com.github.otr.academy.scraper.service
 
-import domain.use_case.category.GetAllCategoriesUseCase
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.use_case.category.GetAllCategoriesUseCase
 
 import javax.inject.Inject
 

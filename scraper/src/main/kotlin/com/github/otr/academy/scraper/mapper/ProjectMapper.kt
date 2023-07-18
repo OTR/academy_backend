@@ -1,6 +1,7 @@
 package com.github.otr.academy.scraper.mapper
 
 import com.github.otr.academy.domain.model.Project
+
 import com.github.otr.academy.scraper.dto.project.ProjectDTO
 
 import javax.inject.Inject
@@ -8,9 +9,9 @@ import javax.inject.Inject
 /**
  *
  */
-class ProjectDtoToDomainMapperImpl @Inject constructor(
+internal class ProjectMapper @Inject constructor(
 
-) : GenericDtoToDomainMapper<Project, ProjectDTO> {
+) : GenericDtoMapper<Project, ProjectDTO> {
 
     override fun mapDtoToDomain(dto: ProjectDTO): Project {
         if (

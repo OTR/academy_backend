@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class StageContainerDTO(
+internal data class StageContainerDTO(
 
     @SerializedName("stages")
     var stages: ArrayList<StageDTO>

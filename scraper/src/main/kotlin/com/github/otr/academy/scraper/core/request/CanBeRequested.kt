@@ -1,8 +1,8 @@
-package data.scraper.core.request
+package com.github.otr.academy.scraper.core.request
 
 /**
  *
  */
-interface CanBeRequested {
+internal interface CanBeRequested {
     val type: BaseRequestType
 }

@@ -1,15 +1,16 @@
-package data.scraper.task.stage.request
+package com.github.otr.academy.scraper.task.stage.request
 
-import data.scraper.dto.stage.StageDTO
-import data.scraper.db_handler.CanBeDatabaseEntity
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.FIVE_HUNDRED_BYTES
-import data.scraper.core.request.Parsable
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.FIVE_HUNDRED_BYTES
+import com.github.otr.academy.scraper.core.request.Parsable
+import com.github.otr.academy.scraper.db_handler.DatabaseOwner
+import com.github.otr.academy.scraper.dto.stage.StageDTO
 
 /**
  *
  */
-data class StageRequest(
+internal data class StageRequest(
     override val type: StageRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,
@@ -19,4 +20,4 @@ data class StageRequest(
     override var isRowExists: Boolean?,
     val entityFromDB: Stage?,
     override val minFileLength: Long = FIVE_HUNDRED_BYTES,
-) : Cacheable, Parsable<StageDTO>, CanBeDatabaseEntity
+) : Cacheable, Parsable<StageDTO>, DatabaseOwner

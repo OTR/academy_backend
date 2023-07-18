@@ -1,15 +1,16 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Topic
+import com.github.otr.academy.domain.model.Topic
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.statements.InsertStatement
 
-/*
-    val isBeta: Boolean,
+/**
+ * Excluded fields:
+ *      val isBeta: Boolean,
  */
-object TopicsTable: Table(name = "topics") {
+internal object TopicsTable: Table(name = "topics") {
     val topicId = integer("topic_id")
     val topicRootId = integer("topic_root_id")
     val topicParentId = integer("topic_parent_id")
@@ -42,10 +43,10 @@ object TopicsTable: Table(name = "topics") {
         rootTitle = this[topicRootTitle],
         rootSubgroupTitle = this[topicRootSubgroupTitle],
 
-        prerequisites = emptyList(),
-        hierarchy = emptyList(),
-        children = emptyList(),
-        followers = emptyList(),
+//        prerequisites = emptyList(), // TODO:
+//        hierarchy = emptyList(),
+//        children = emptyList(),
+//        followers = emptyList(),
 
         theory = this[topicTheory],
         depth = this[topicDepth],

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class TopicDTO(
+internal data class TopicDTO(
 
     @SerializedName("id")
     val id: Int?,

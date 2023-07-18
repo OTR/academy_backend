@@ -1,6 +1,6 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Category
+import com.github.otr.academy.domain.model.Category
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 /**
  *
  */
-object CategoriesTable : Table(name="categories") {
+internal object CategoriesTable : Table(name="categories") {
     val categoryId = integer("category_id")
     val categoryTitle = varchar("category_title", 255)
     val categoryDescription = varchar("category_description", 255)
@@ -23,7 +23,7 @@ object CategoriesTable : Table(name="categories") {
         id = this[categoryId],
         title = this[categoryTitle],
         description = this[categoryDescription],
-        tracks = emptyList()
+//        tracks = emptyList() TODO:
     )
 
     /**

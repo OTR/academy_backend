@@ -1,20 +1,18 @@
-package data.scraper.task.project
+package com.github.otr.academy.scraper.task.project
 
-import data.mapper.blank.StageRequestFactory
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.project.request.ProjectRequest
-import data.scraper.task.project.handler.GetProjectFromTableHandler
-import data.scraper.task.project.handler.InsertProjectIntoTableHandler
-import data.scraper.task.stage.LoadStageFromRemoteTask
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.request_factory.StageRequestFactory
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
+import com.github.otr.academy.scraper.task.project.handler.GetProjectFromTableHandler
+import com.github.otr.academy.scraper.task.project.handler.InsertProjectIntoTableHandler
+import com.github.otr.academy.scraper.task.stage.LoadStageFromRemoteTask
 
 /**
  *
  */
-class SaveProjectToDbTask(
+internal class SaveProjectToDbTask(
     private val request: ProjectRequest
 ) : BaseTask {
 

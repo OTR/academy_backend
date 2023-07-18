@@ -1,11 +1,11 @@
-package data.scraper.datasource
+package com.github.otr.academy.scraper.datasource
 
 /**
  * Hidden from any user Category that contains
  * alpha project that are in progress, accessible but not published yet
  * only reachable from API call
  */
-val ALPHA_PROJECTS: List<Int> = listOf(
+internal val ALPHA_PROJECTS: List<Int> = listOf(
     306, // Rock-Paper-Scissors (Go) (Alpha)
     311, // Long Whale Ago (Bioinformatics) (Beta)
     320, // Postprocessor (Introduction to NodeJS) (Draft)

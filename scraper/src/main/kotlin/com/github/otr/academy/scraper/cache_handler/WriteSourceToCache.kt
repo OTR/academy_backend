@@ -1,11 +1,11 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
 import java.io.File
 
 /**
  *
  */
-object WriteSourceToCache : BaseCacheHandler() {
+internal object WriteSourceToCache : BaseCacheHandler() {
 
     override val handlerName: String = "Write Source Data to Cache"
 

@@ -1,16 +1,16 @@
-package di
+package com.github.otr.academy.scraper.di
+
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Stage
 
 import dagger.Binds
 import dagger.Module
-import data.repository.StageRepositoryImpl
-
-import domain.repository.GenericParentChildrenRepository
 
 /**
  *
  */
 @Module
-interface ParentChildrenRepositoryModule {
+internal interface ParentChildrenRepositoryModule {
 
     @Binds
     fun bindProjectToStageRepository(

@@ -1,20 +1,20 @@
-package data.scraper.task.track.handler
+package com.github.otr.academy.scraper.task.track.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.track.TrackContainerDTO
+import com.github.otr.academy.scraper.dto.track.TrackDTO
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
 import com.google.gson.Gson
-
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.track.TrackContainerDTO
-import data.scraper.dto.track.TrackDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.track.request.TrackRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class ParseJsonTrackHandler @Inject constructor(
-
+internal class ParseJsonTrackHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
 ): BaseCacheHandler() {
 
     override val handlerName: String = "Parse Source JSON for Track from cache file"

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class ProjectDTO(
+internal data class ProjectDTO(
 
     @SerializedName("id")
     val id: Int?,

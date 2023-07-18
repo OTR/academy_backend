@@ -1,15 +1,15 @@
-package data.repository
+package com.github.otr.academy.db_details.exposed.repository
 
-import data.database.SQLiteDatabaseFactory
-import data.table.TracksTable
-import data.table.TracksTable.mapRowToTrack
-import data.table.TracksTable.trackId
-import data.table.parent_child.TracksToProjectsTable
-import data.table.parent_child.TracksToProjectsTable.projectId
-import data.table.parent_child.TracksToProjectsTable.projectLevel
-import domain.model.Project
-import domain.model.Track
-import domain.repository.GenericRepository
+import com.github.otr.academy.db_details.exposed.database.SQLiteDatabaseFactory
+import com.github.otr.academy.db_details.exposed.dbo.TracksTable
+import com.github.otr.academy.db_details.exposed.dbo.TracksTable.mapRowToTrack
+import com.github.otr.academy.db_details.exposed.dbo.TracksTable.trackId
+import com.github.otr.academy.db_details.exposed.dbo.parent_child.TracksToProjectsTable
+import com.github.otr.academy.db_details.exposed.dbo.parent_child.TracksToProjectsTable.projectId
+import com.github.otr.academy.db_details.exposed.dbo.parent_child.TracksToProjectsTable.projectLevel
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.domain.repository.GenericRepository
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.insert
@@ -22,7 +22,7 @@ import javax.inject.Inject
 /**
  *
  */
-class TrackRepositoryImpl @Inject constructor(
+internal class TrackRepositoryImpl @Inject constructor(
     private val projectRepository: GenericRepository<Project>
 ) : GenericRepository<Track> {
 
@@ -33,13 +33,15 @@ class TrackRepositoryImpl @Inject constructor(
         tracksToProjectsTable
     )
 
-    override fun save(entity: Track) {
+    override fun save(entity: Track): Track {
         transaction {
             tracksTable.insert { mapTrackToRow(it, entity) }
         }
+        // FIXME: SELECT FROM TABLE
+        return entity
     }
 
-    override fun saveAll(entities: List<Track>) {
+    fun saveAll(entities: List<Track>) {
         TODO("Not yet implemented")
     }
 
@@ -49,6 +51,14 @@ class TrackRepositoryImpl @Inject constructor(
                 .map { it.mapRowToTrack() }
                 .singleOrNull()
         }
+    }
+
+    override fun deleteById(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun update(entity: Track): Track {
+        TODO("Not yet implemented")
     }
 
     private fun getProjectIdsByLevel(track: Track): Track {
@@ -69,12 +79,13 @@ class TrackRepositoryImpl @Inject constructor(
         val capstoneProjectIds: List<Int> = parseProjectIdsByLevel(projectIdsByLevel, "capstone")
 
         return track.copy(
-            easyProjects = getProjectsByIds(easyProjectIds) ,
-            mediumProjects = getProjectsByIds(mediumProjectIds),
-            hardProjects = getProjectsByIds(hardProjectIds),
-            challengingProjects = getProjectsByIds(challengingProjectIds),
-            betaProjects = getProjectsByIds(betaProjectIds),
-            capstoneProjects = getProjectsByIds(capstoneProjectIds)
+            // TODO:
+//            easyProjects = getProjectsByIds(easyProjectIds) ,
+//            mediumProjects = getProjectsByIds(mediumProjectIds),
+//            hardProjects = getProjectsByIds(hardProjectIds),
+//            challengingProjects = getProjectsByIds(challengingProjectIds),
+//            betaProjects = getProjectsByIds(betaProjectIds),
+//            capstoneProjects = getProjectsByIds(capstoneProjectIds)
         )
     }
 

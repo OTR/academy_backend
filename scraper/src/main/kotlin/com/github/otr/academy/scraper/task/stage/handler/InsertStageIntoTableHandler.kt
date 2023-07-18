@@ -1,18 +1,19 @@
-package data.scraper.task.stage.handler
+package com.github.otr.academy.scraper.task.stage.handler
 
-import data.mapper.dto_to_domain.GenericDtoToDomainMapper
-import data.scraper.dto.stage.StageDTO
-import data.scraper.task.stage.request.StageRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.dto.stage.StageDTO
+import com.github.otr.academy.scraper.mapper.GenericDtoMapper
+import com.github.otr.academy.scraper.task.stage.request.StageRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class InsertStageIntoTableHandler @Inject constructor(
+internal class InsertStageIntoTableHandler @Inject constructor(
     private val repository: GenericRepository<Stage>,
-    private val mapper: GenericDtoToDomainMapper<Stage, StageDTO>
+    private val mapper: GenericDtoMapper<Stage, StageDTO>
 ) : BaseStageHandler() {
 
     override val handlerName: String = "INSERT stage INTO stages table;"

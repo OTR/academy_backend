@@ -6,12 +6,12 @@ import com.github.otr.academy.domain.repository.TrackRepository
 /**
  *
  */
-class GetTrackDetailsByIdUseCase(
+class GetAllTracksUseCase(
     private val repository: TrackRepository
 ) {
 
-    operator fun invoke(trackId: Int): Track? {
-        return repository.getById(trackId)
+    operator fun invoke(): List<Track> {
+        return repository.getAll()
     }
 
 }

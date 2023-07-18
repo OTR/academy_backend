@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  *
  */
-data class TableOfContentsDTO(
+internal data class TableOfContentsDTO(
 
     @SerializedName("id")
     val id: String?,

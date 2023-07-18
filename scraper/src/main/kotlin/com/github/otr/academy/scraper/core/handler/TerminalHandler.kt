@@ -1,18 +1,19 @@
-package data.scraper.core.handler
+package com.github.otr.academy.scraper.core.handler
 
-import data.logging.LogbackLoggerImpl_Factory
-import data.logging.MyLogger
-import data.scraper.core.request.CanBeRequested
+import com.github.otr.academy.scraper.core.request.CanBeRequested
+
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 /**
  * Should be the last handler in the chain of responsibility
  * Does nothing, just returns result object
  */
-class TerminalHandler <T : CanBeRequested> : Handler<T> {
+internal class TerminalHandler  <T : CanBeRequested> : Handler<T> {
 
     override val handlerName: String = "Terminal Handler"
 
-    override val logger: MyLogger = LogbackLoggerImpl_Factory.newInstance()
+    override val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     override var next: Handler<T>
         get() = throw IllegalAccessException("Should not be called")

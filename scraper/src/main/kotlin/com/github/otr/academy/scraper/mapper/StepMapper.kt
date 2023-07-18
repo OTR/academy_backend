@@ -8,9 +8,9 @@ import javax.inject.Inject
 /**
  *
  */
-class StepDtoToDomainMapperImpl @Inject constructor(
+internal class StepMapper @Inject constructor(
 
-) : GenericDtoToDomainMapper<Step, StepDTO> {
+) : GenericDtoMapper<Step, StepDTO> {
 
     private companion object {
 

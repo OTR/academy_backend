@@ -1,21 +1,19 @@
-package data.scraper.task.topic.deprecated
+package com.github.otr.academy.scraper.task.topic.deprecated
 
-import data.scraper.api_handler.LoadSourceJsonHandler
-import data.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
-import data.scraper.cache_handler.GetPathToCacheFile
-import data.scraper.cache_handler.ReadSourceFromCache
-import data.scraper.cache_handler.WriteSourceToCache
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.cache_handler.Cacheable
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.api_handler.LoadSourceJsonHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.CheckIfCacheFileExistsAndNotEmpty
+import com.github.otr.academy.scraper.cache_handler.GetPathToCacheFile
+import com.github.otr.academy.scraper.cache_handler.ReadSourceFromCache
+import com.github.otr.academy.scraper.cache_handler.WriteSourceToCache
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
 
 /**
  *
  */
-class LoadPageWithTopicsTask (
+internal class LoadPageWithTopicsTask (
     private val request: PageWithTopicsRequest
 ) : BaseTask {
 
@@ -25,9 +23,9 @@ class LoadPageWithTopicsTask (
     private val loadSourceJsonHandler: LoadSourceJsonHandler = component.__getLoadSourceJsonHandler()
 
     override fun buildChainOfHandlers(): Handler<Cacheable> {
-        val chain = GetPathToCacheFile.setNext(
+        val chain = GetPathToCacheFile().setNext(
             CheckIfCacheFileExistsAndNotEmpty().setNext(
-                ReadSourceFromCache.setNext(
+                ReadSourceFromCache().setNext(
                     loadSourceJsonHandler.setNext(
                         WriteSourceToCache
                     )

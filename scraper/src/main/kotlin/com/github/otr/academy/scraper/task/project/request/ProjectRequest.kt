@@ -1,16 +1,17 @@
-package data.scraper.task.project.request
+package com.github.otr.academy.scraper.task.project.request
 
-import data.scraper.core.request.BaseRequestType
-import data.scraper.dto.project.ProjectDTO
-import data.scraper.db_handler.CanBeDatabaseEntity
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.SEVEN_HUNDRED_BYTES
-import data.scraper.core.request.Parsable
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.SEVEN_HUNDRED_BYTES
+import com.github.otr.academy.scraper.core.request.BaseRequestType
+import com.github.otr.academy.scraper.core.request.Parsable
+import com.github.otr.academy.scraper.db_handler.DatabaseOwner
+import com.github.otr.academy.scraper.dto.project.ProjectDTO
 
 /**
  *
  */
-data class ProjectRequest(
+internal data class ProjectRequest(
     override val type: BaseRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,
@@ -19,4 +20,4 @@ data class ProjectRequest(
     override var isRowExists: Boolean?,
     val entityFromDB: Project?,
     override val minFileLength: Long = SEVEN_HUNDRED_BYTES,
-) : Cacheable, Parsable<ProjectDTO>, CanBeDatabaseEntity
+) : Cacheable, Parsable<ProjectDTO>, DatabaseOwner

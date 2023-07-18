@@ -1,16 +1,16 @@
-package data.scraper.core.handler
+package com.github.otr.academy.scraper.core.handler
 
-import data.logging.MyLogger
-import data.scraper.core.request.CanBeRequested
+import com.github.otr.academy.scraper.core.request.CanBeRequested
+import org.slf4j.Logger
 
 /**
  *
  */
-interface  Handler <T : CanBeRequested> {
+internal interface  Handler <T : CanBeRequested> {
 
     val handlerName: String
 
-    val logger: MyLogger
+    val logger: Logger
 
     var next: Handler<T>
 

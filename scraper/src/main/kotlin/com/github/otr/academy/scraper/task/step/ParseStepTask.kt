@@ -1,20 +1,18 @@
-package data.scraper.task.step
+package com.github.otr.academy.scraper.task.step
 
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseParseTask
-import data.scraper.task.step.request.StepRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseParseTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.step.request.StepRequest
 
 /**
  *
  */
-class ParseStepTask(
+internal class ParseStepTask(
     private val request: StepRequest
-    ) : BaseParseTask<StepRequest>(request) {
+) : BaseParseTask<StepRequest>(request) {
 
     private val component: ApplicationComponent = DaggerApplicationComponent.create()
 

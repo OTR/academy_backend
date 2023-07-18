@@ -1,6 +1,8 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
-import data.config.Config
+import com.github.otr.academy.scraper.config.Config
+
+import javax.inject.Inject
 
 import kotlin.io.path.Path
 import kotlin.io.path.pathString
@@ -8,7 +10,9 @@ import kotlin.io.path.pathString
 /**
  *
  */
-object GetPathToCacheFile : BaseCacheHandler() {
+internal class GetPathToCacheFile @Inject constructor(
+    // TODO: Inject config
+) : BaseCacheHandler() {
 
     override val handlerName: String = "Get Path To Cache File"
 

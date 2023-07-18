@@ -1,21 +1,19 @@
-package data.scraper.task.page_with_steps
+package com.github.otr.academy.scraper.task.page_with_steps
 
-import data.mapper.blank.StepRequestFactory
-import data.scraper.cache_handler.Cacheable
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.core.task.BaseParseTask
-import data.scraper.dto.step.StepDTO
-import data.scraper.task.page_with_steps.handler.ParseJsonPageWithStepsHandler
-import data.scraper.task.page_with_steps.request.PageWithStepsRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseParseTask
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.dto.step.StepDTO
+import com.github.otr.academy.scraper.request_factory.StepRequestFactory
+import com.github.otr.academy.scraper.task.page_with_steps.handler.ParseJsonPageWithStepsHandler
+import com.github.otr.academy.scraper.task.page_with_steps.request.PageWithStepsRequest
 
 /**
  *
  */
-class ParsePageWithStepsTask(
+internal class ParsePageWithStepsTask(
     private val request: PageWithStepsRequest
 ) : BaseParseTask<PageWithStepsRequest>(request) {
 

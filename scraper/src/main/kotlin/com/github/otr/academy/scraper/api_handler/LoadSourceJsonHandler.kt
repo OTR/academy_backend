@@ -1,10 +1,10 @@
-package data.scraper.api_handler
+package com.github.otr.academy.scraper.api_handler
 
-import data.config.Config
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.config.Config
 
-import org.jsoup.Connection.Response
+import org.jsoup.Connection.Response // TODO: P2I
 import org.jsoup.Jsoup
 
 import javax.inject.Inject
@@ -12,7 +12,9 @@ import javax.inject.Inject
 /**
  *
  */
-class LoadSourceJsonHandler @Inject constructor() : BaseCacheHandler() {
+class LoadSourceJsonHandler @Inject constructor(
+    // TODO: Inject config
+) : BaseCacheHandler() {
 
     override val handlerName: String = "Load Source JSON from remote server"
 

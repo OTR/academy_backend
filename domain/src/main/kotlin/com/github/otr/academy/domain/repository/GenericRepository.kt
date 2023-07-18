@@ -7,9 +7,11 @@ interface GenericRepository <T> {
 
     fun getAll(): List<T>
 
-    fun getById(id: Int): T
+    fun getById(id: Int): T?
 
-    fun create(entity: T): T
+    fun save(entity: T)
+
+    fun saveAll(entities: List<T>)
 
     fun update(entity: T): T
 

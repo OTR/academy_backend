@@ -1,4 +1,4 @@
-package data.scraper.cache_handler
+package com.github.otr.academy.scraper.cache_handler
 
 import java.io.File
 
@@ -6,7 +6,7 @@ import java.io.File
  * @param minFileLength describes minimal required file length in bytes
  *          to be considered as valid
  */
-class CheckIfCacheFileExistsAndNotEmpty : BaseCacheHandler() {
+internal class CheckIfCacheFileExistsAndNotEmpty : BaseCacheHandler() {
 
     override val handlerName: String = "Check If Cache File Exists"
 

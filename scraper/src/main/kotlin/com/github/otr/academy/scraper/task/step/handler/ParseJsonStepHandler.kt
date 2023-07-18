@@ -1,20 +1,20 @@
-package data.scraper.task.step.handler
+package com.github.otr.academy.scraper.task.step.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.step.StepContainerDTO
+import com.github.otr.academy.scraper.dto.step.StepDTO
+import com.github.otr.academy.scraper.task.step.request.StepRequest
 
 import com.google.gson.Gson
-
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.step.StepContainerDTO
-import data.scraper.dto.step.StepDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.step.request.StepRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class ParseJsonStepHandler @Inject constructor(
-
+internal class ParseJsonStepHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
 ) : BaseCacheHandler() {
 
     override val handlerName: String = "Parse JSON to Step DTO handler"
@@ -32,8 +32,8 @@ class ParseJsonStepHandler @Inject constructor(
             .fromJson(rawJson, StepContainerDTO::class.java)
 
         val stepDTO: StepDTO = stepContainerDTO.steps.first()
-
-        val response = (request as StepRequest).copy(dto = stepDTO) // TODO: Remove type casts
+        // TODO: Remove type casts
+        val response = (request as StepRequest).copy(dto = stepDTO)
 
         return response
     }

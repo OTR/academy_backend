@@ -1,8 +1,8 @@
-package data.scraper.datasource
+package com.github.otr.academy.scraper.datasource
 
-import data.mapper.blank.TrackRequestFactory
-import data.scraper.task.category.request.CategoryRequest
-import data.scraper.task.category.request.CategoryRequestType
+import com.github.otr.academy.scraper.request_factory.TrackRequestFactory
+import com.github.otr.academy.scraper.task.category.request.CategoryRequest
+import com.github.otr.academy.scraper.task.category.request.CategoryRequestType
 
 private const val DRAFTS_CATEGORY_ID: Int = 20
 private const val DRAFTS_TITLE: String = "Drafts"
@@ -27,11 +27,11 @@ private val TRACKS_FOR_DRAFTS_CATEGORY: ArrayList<Int> = arrayListOf(
  * beta project that are in progress, accessible but not published yet
  * only reachable from API call
  */
-val DraftsCategory: CategoryRequest = CategoryRequest(
+internal val DraftsCategory: CategoryRequest = CategoryRequest(
     type = CategoryRequestType(id = DRAFTS_CATEGORY_ID),
     title = DRAFTS_TITLE,
     description = DRAFTS_DESCRIPTION,
-    tracks = TRACKS_FOR_DRAFTS_CATEGORY.map {trackId: Int ->
+    tracks = TRACKS_FOR_DRAFTS_CATEGORY.map { trackId: Int ->
         TrackRequestFactory.getBlankTrackRequest(trackId)
     },
     isRowExists = null,

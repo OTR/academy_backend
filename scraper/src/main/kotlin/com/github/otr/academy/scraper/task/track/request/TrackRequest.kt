@@ -1,15 +1,16 @@
-package data.scraper.task.track.request
+package com.github.otr.academy.scraper.task.track.request
 
-import data.scraper.dto.track.TrackDTO
-import data.scraper.db_handler.CanBeDatabaseEntity
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.KILOBYTE
-import data.scraper.core.request.Parsable
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.KILOBYTE
+import com.github.otr.academy.scraper.core.request.Parsable
+import com.github.otr.academy.scraper.db_handler.DatabaseOwner
+import com.github.otr.academy.scraper.dto.track.TrackDTO
 
 /**
  *
  */
-data class TrackRequest(
+internal data class TrackRequest(
     override val type: TrackRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,
@@ -19,4 +20,4 @@ data class TrackRequest(
     val entityFromDB: Track?,
     val projectByLevel: List<Pair<String, Int>>,
     override val minFileLength: Long = KILOBYTE
-) : Cacheable, Parsable<TrackDTO> , CanBeDatabaseEntity
+) : Cacheable, Parsable<TrackDTO> , DatabaseOwner

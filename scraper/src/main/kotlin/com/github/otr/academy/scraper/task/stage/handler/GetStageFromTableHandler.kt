@@ -1,14 +1,15 @@
-package data.scraper.task.stage.handler
+package com.github.otr.academy.scraper.task.stage.handler
 
-import data.scraper.task.stage.request.StageRequest
-import domain.repository.GenericRepository
+import com.github.otr.academy.domain.model.Stage
+import com.github.otr.academy.domain.repository.GenericRepository
+import com.github.otr.academy.scraper.task.stage.request.StageRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class GetStageFromTableHandler @Inject constructor(
+internal class GetStageFromTableHandler @Inject constructor(
     val repository: GenericRepository<Stage>
 ) : BaseStageHandler() {
 

@@ -26,7 +26,7 @@ abstract class BaseRepository <T, S : Any> (
         }
     }
 
-    override fun create(entity: T): T {
+    override fun save(entity: T): T {
         return repository.save(mapper.mapDomainToDbo(entity)).let {
             mapper.mapDboToDomain(it)
         }

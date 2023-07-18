@@ -1,21 +1,21 @@
-package data.scraper.task.track_to_project
+package com.github.otr.academy.scraper.task.track_to_project
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.track.request.TrackRequest
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.di.ApplicationComponent
+import com.github.otr.academy.scraper.task.track.request.TrackRequest
 
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
 
 /**
  *
  */
-class SaveTrackToProjectTask(val request: TrackRequest) : BaseTask {
+internal class SaveTrackToProjectTask(val request: TrackRequest) : BaseTask {
 
     override val fullTaskName: String = "Create a table to assign a projects to track"
 
     private val component: ApplicationComponent = DaggerApplicationComponent.create()
-    private val insertTrackToProjectIntoTableHandler: InsertTrackToProjectIntoTableHandler = component.getInsertTrackToProjectIntoTableHandler()
+    private val insertTrackToProjectIntoTableHandler: InsertTrackToProjectIntoTableHandler =
+        component.getInsertTrackToProjectIntoTableHandler()
 
     override fun buildChainOfHandlers(): Handler<TrackRequest> {
         val chain = insertTrackToProjectIntoTableHandler

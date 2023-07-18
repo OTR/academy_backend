@@ -1,16 +1,17 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Stage
+import com.github.otr.academy.domain.model.Stage
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.statements.InsertStatement
 
-/*
-    val isIdeRequired: Boolean,
-    val previousStageId: String
+/**
+ * Excluded fields:
+ *      val isIdeRequired: Boolean,
+ *      val previousStageId: String
  */
-object StagesTable : Table(name = "stages") {
+internal object StagesTable : Table(name = "stages") {
     val stageId = integer("stage_id")
     val stageTitle = varchar("stage_title", 255)
     val stageDescription = varchar("stage_description", 2048)
@@ -34,19 +35,19 @@ object StagesTable : Table(name = "stages") {
         id = this[stageId],
         title = this[stageTitle],
         description = this[stageDescription],
-        longDescription = this[stageLongDescription],
+//        longDescription = this[stageLongDescription], // TODO:
 
-        language = this[stageLanguage],
-        project = this[stageProject],
-        step = this[stageStep],
+        stageLanguage = this[stageLanguage],
+        stageProject = this[stageProject],
+        stageStep = this[stageStep],
         stagesCount = this[stagesCount],
         stageIndex = this[stageIndex],
-        secondsToComplete = this[secondsToCompleteStage],
-        previewStep = this[stagePreviewStep],
+//        secondsToComplete = this[secondsToCompleteStage],
+        stagePreviewStep = this[stagePreviewStep],
         isIdeRequired = this[isIdeRequiredStage],
 
-        prerequisites = emptyList(),
-        allPrerequisites = emptyList(),
+//        prerequisites = emptyList(),
+//        allPrerequisites = emptyList(),
         previousStageId = this[previousStageId]
     )
 
@@ -61,15 +62,15 @@ object StagesTable : Table(name = "stages") {
             this[stageId] = stage.id
             this[stageTitle] = stage.title
             this[stageDescription] = stage.description
-            this[stageLongDescription] = stage.longDescription
+//            this[stageLongDescription] = stage.longDescription
 
-            this[stageLanguage] = stage.language
-            this[stageProject] = stage.project
-            this[stageStep] = stage.step
+            this[stageLanguage] = stage.stageLanguage
+            this[stageProject] = stage.stageProject
+            this[stageStep] = stage.stageStep
             this[stagesCount] = stage.stagesCount
             this[stageIndex] = stage.stageIndex
-            this[secondsToCompleteStage] = stage.secondsToComplete
-            this[stagePreviewStep] = stage.previewStep
+//            this[secondsToCompleteStage] = stage.secondsToComplete
+            this[stagePreviewStep] = stage.stagePreviewStep
             this[isIdeRequiredStage] = stage.isIdeRequired
             this[previousStageId] = stage.previousStageId
         }

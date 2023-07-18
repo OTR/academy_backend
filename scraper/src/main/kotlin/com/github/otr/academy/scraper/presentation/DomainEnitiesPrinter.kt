@@ -1,12 +1,15 @@
-package com.github.otr.academy.scraper
+package com.github.otr.academy.scraper.presentation
 
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Track
+import com.github.otr.academy.scraper.di.ApplicationComponent
+
 
 /**
  *
  */
-object DomainEntitiesPrinter {
+internal object DomainEntitiesPrinter {
 
     private val component: ApplicationComponent = DaggerApplicationComponent.create()
     private val categoryService = component.getCategoryService()

@@ -1,9 +1,9 @@
-package data.scraper.task.stage.deprecated.handler
+package com.github.otr.academy.scraper.task.stage.deprecated.handler
 
-import data.scraper.core.handler.BaseGenericHandler
-import data.scraper.task.stage.deprecated.request.StagesForProjectRequest
+import com.github.otr.academy.scraper.core.handler.BaseGenericHandler
+import com.github.otr.academy.scraper.task.stage.deprecated.request.StagesForProjectRequest
 
 /**
  *
  */
-abstract class BaseStagesForProjectHandler : BaseGenericHandler<StagesForProjectRequest>()
+internal abstract class BaseStagesForProjectHandler : BaseGenericHandler<StagesForProjectRequest>()

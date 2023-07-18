@@ -1,16 +1,16 @@
-package data.scraper.core.request
+package com.github.otr.academy.scraper.core.request
 
-import data.config.Config
+import com.github.otr.academy.scraper.config.Config
 
 /**
  *
  */
-abstract class BaseRequestType : RequestType {
+internal abstract class BaseRequestType : RequestType {
 
     companion object {
         internal const val RELATIVE_PATH: String = ""
         internal const val PROTOCOL: String = "https"
-        internal val HOST: String = Config.getHost()
+        internal val HOST: String = Config.getHost() // TODO: Inject config
         internal const val JSON_QUERY: String = "?format=json"
     }
 

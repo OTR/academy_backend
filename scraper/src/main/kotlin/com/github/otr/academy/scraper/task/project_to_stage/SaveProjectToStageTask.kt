@@ -1,17 +1,14 @@
-package data.scraper.task.project_to_stage
+package com.github.otr.academy.scraper.task.project_to_stage
 
-import data.scraper.core.task.BaseTask
-import data.scraper.core.handler.Handler
-import data.scraper.task.project.request.ProjectRequest
-
-import di.ApplicationComponent
-import di.DaggerApplicationComponent
+import com.github.otr.academy.scraper.core.handler.Handler
+import com.github.otr.academy.scraper.core.task.BaseTask
+import com.github.otr.academy.scraper.task.project.request.ProjectRequest
 
 /**
  *
  */
 @Deprecated("Stage row already contains Foreign key to Project Id")
-class SaveProjectToStageTask(val request: ProjectRequest) : BaseTask {
+internal class SaveProjectToStageTask(val request: ProjectRequest) : BaseTask {
 
     override val fullTaskName: String = "Create a table to assign a stages to project"
 

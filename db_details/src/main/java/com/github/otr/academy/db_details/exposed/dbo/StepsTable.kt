@@ -1,6 +1,6 @@
-package data.table
+package com.github.otr.academy.db_details.exposed.dbo
 
-import domain.model.Step
+import com.github.otr.academy.domain.model.Step
 
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
@@ -9,7 +9,7 @@ import org.jetbrains.exposed.sql.statements.InsertStatement
 /*
     val isBeta: Boolean,
  */
-object StepsTable : Table(name = "steps") {
+internal object StepsTable : Table(name = "steps") {
     val stepId = integer("step_id")
     val stepTitle = varchar("step_title", 255)
     val stepType = varchar("step_type", 255)
@@ -32,9 +32,9 @@ object StepsTable : Table(name = "steps") {
         id = this[stepId],
         title = this[stepTitle],
         type = this[stepType],
-        topic = this[stepTopic], // Could be nullabl
-        topicTheory = this[stepTopicTheory],// could be nullabl
-        stage = this[stepStage],// could be nullabl
+        topic = this[stepTopic], // Could be nullable
+        topicTheory = this[stepTopicTheory],// could be nullable
+        stage = this[stepStage],// could be nullable
         position = this[stepPosition],
         project = this[stepProject],
         isCompleted = this[isCompletedStep],

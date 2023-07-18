@@ -25,7 +25,7 @@ import com.google.gson.annotations.SerializedName
 
 
  */
-data class OptionsDTO(
+internal data class OptionsDTO(
 
     @SerializedName("is_run_user_code_allowed")
     var isRunUserCodeAllowed: Boolean?,

@@ -1,20 +1,20 @@
-package data.scraper.task.topic.handler
+package com.github.otr.academy.scraper.task.topic.handler
+
+import com.github.otr.academy.scraper.cache_handler.BaseCacheHandler
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.dto.topic.TopicContainerDTO
+import com.github.otr.academy.scraper.dto.topic.TopicDTO
+import com.github.otr.academy.scraper.task.topic.request.TopicRequest
 
 import com.google.gson.Gson
-
-import data.scraper.cache_handler.BaseCacheHandler
-import data.scraper.dto.topic.TopicContainerDTO
-import data.scraper.dto.topic.TopicDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.task.topic.request.TopicRequest
 
 import javax.inject.Inject
 
 /**
  *
  */
-class ParseJsonTopicHandler @Inject constructor(
-
+internal class ParseJsonTopicHandler @Inject constructor(
+    // TODO: Replace Gson with P2I
 ) : BaseCacheHandler() {
 
     override val handlerName: String = "Parse JSON to Topic DTO handler"

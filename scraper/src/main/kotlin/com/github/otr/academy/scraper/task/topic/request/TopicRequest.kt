@@ -1,15 +1,16 @@
-package data.scraper.task.topic.request
+package com.github.otr.academy.scraper.task.topic.request
 
-import data.scraper.db_handler.CanBeDatabaseEntity
-import data.scraper.dto.topic.TopicDTO
-import data.scraper.cache_handler.Cacheable
-import data.scraper.cache_handler.Cacheable.Companion.THREE_HUNDRED_BYTES
-import data.scraper.core.request.Parsable
+import com.github.otr.academy.domain.model.Topic
+import com.github.otr.academy.scraper.cache_handler.Cacheable
+import com.github.otr.academy.scraper.cache_handler.Cacheable.Companion.THREE_HUNDRED_BYTES
+import com.github.otr.academy.scraper.core.request.Parsable
+import com.github.otr.academy.scraper.db_handler.DatabaseOwner
+import com.github.otr.academy.scraper.dto.topic.TopicDTO
 
 /**
  *
  */
-data class TopicRequest(
+internal data class TopicRequest(
     override val type: TopicRequestType,
     override var pathToCacheFile: String?,
     override var isCacheExists: Boolean?,
@@ -18,4 +19,4 @@ data class TopicRequest(
     override var isRowExists: Boolean?,
     var entityFromDB: Topic?,
     override val minFileLength: Long = THREE_HUNDRED_BYTES
-) : Cacheable, Parsable<TopicDTO>, CanBeDatabaseEntity
+) : Cacheable, Parsable<TopicDTO>, DatabaseOwner
