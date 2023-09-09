@@ -1,7 +1,8 @@
 package com.github.otr.academy.domain.model
 
 /**
- * TODO: Should I really add default constructor here?
+ * Excluded fields:
+ *      val tracks: List<Track>
  */
 data class Category(
     val id: Int,

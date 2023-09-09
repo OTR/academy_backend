@@ -10,7 +10,7 @@ class GetTrackDetailsByIdUseCase(
     private val repository: TrackRepository
 ) {
 
-    operator fun invoke(trackId: Int): Track {
+    operator fun invoke(trackId: Int): Track? {
         return repository.getById(trackId)
     }
 

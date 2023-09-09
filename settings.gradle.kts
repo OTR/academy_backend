@@ -10,7 +10,10 @@ pluginManagement {
 }
 
 rootProject.name = "academy_backend"
+
 include(":domain")
 include(":spring_backend")
 include(":scraper")
 include(":wiki_renderer")
+include(":spring_details")
+include(":db_details")

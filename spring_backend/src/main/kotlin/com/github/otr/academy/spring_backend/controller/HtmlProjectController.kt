@@ -31,11 +31,14 @@ class HtmlProjectController(
         @PathVariable("project_id") projectId: Int,
         model: Model
     ): String {
-        val project: Project = getProjectDetailsByIdUseCase(projectId)
+        val project: Project? = getProjectDetailsByIdUseCase(projectId)
         val stages: List<Stage> = getStagesByProjectIdUseCase(projectId)
 
-        model["project"] = project
-        model["stages"] = stages
+        // FIXME: Return page with error details
+        if (project != null) {
+            model["project"] = project
+            model["stages"] = stages
+        }
 
         return PROJECT_DETAIL_PAGE_TEMPLATE
     }

@@ -31,16 +31,19 @@ class HtmlTrackController(
         @PathVariable("track_id") trackId: Int,
         model: Model
     ): String {
-        val track: Track = getTrackDetailsByIdUseCase(trackId)
+        val track: Track? = getTrackDetailsByIdUseCase(trackId)
         val projectsByLevel: ProjectsByLevel = getProjectsByLevelByTrackIdUseCase(trackId)
 
-        model["track"] = track
-        model["easyProjects"] = projectsByLevel.easyProjects
-        model["mediumProjects"] = projectsByLevel.mediumProjects
-        model["hardProjects"] = projectsByLevel.hardProjects
-        model["challengingProjects"] = projectsByLevel.challengingProjects
-        model["betaProjects"] = projectsByLevel.betaProjects
-        model["capstoneProjects"] = projectsByLevel.capstoneProjects
+        // FIXME:
+        if (track != null) {
+            model["track"] = track
+            model["easyProjects"] = projectsByLevel.easyProjects
+            model["mediumProjects"] = projectsByLevel.mediumProjects
+            model["hardProjects"] = projectsByLevel.hardProjects
+            model["challengingProjects"] = projectsByLevel.challengingProjects
+            model["betaProjects"] = projectsByLevel.betaProjects
+            model["capstoneProjects"] = projectsByLevel.capstoneProjects
+        }
 
         return TRACK_DETAIL_PAGE_TEMPLATE
     }

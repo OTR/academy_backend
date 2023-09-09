@@ -1,7 +1,11 @@
 package com.github.otr.academy.domain.model
 
 /**
- *
+ * Excluded fields:
+ *      val longDescription: String, - actually black for all rows
+ *      val secondsToComplete: Double, - doesn't matter
+ *      val allPrerequisites: List<Int>,
+ *      val prerequisites: List<Int>,
  */
 data class Stage(
     val id: Int,

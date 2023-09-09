@@ -41,7 +41,7 @@ class RestCategoryController(
     @PostMapping(path = ["$BASE_API_URL/new"])
     @ResponseStatus(HttpStatus.CREATED)
     fun createNewCategory(@RequestBody newEntity: Category): Category {
-        return repository.create(newEntity)
+        return repository.save(newEntity)
     }
 
     @GetMapping(path = [BASE_API_URL])

@@ -11,7 +11,7 @@ class CreateUserUseCase(
 ) {
 
     operator fun invoke(user: User): User {
-        return repository.create(user)
+        return repository.save(user)
     }
 
 }
