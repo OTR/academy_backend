@@ -29,4 +29,7 @@ class CategoryRepositoryImpl(
         return tracks
     }
 
+    override fun saveAll(entities: List<Category>) {
+        TODO("Not yet implemented")
+    }
 }

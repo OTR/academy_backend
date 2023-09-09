@@ -40,4 +40,8 @@ abstract class BaseRepository <T, S : Any> (
         repository.deleteById(id)
     }
 
+    override fun saveAll(entities: List<T>) {
+        TODO("Not yet implemented")
+    }
+
 }

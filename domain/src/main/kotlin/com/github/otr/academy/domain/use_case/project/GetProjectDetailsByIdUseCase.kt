@@ -10,7 +10,7 @@ class GetProjectDetailsByIdUseCase(
     private val repository: ProjectRepository
 ) {
 
-    operator fun invoke(projectId: Int): Project {
+    operator fun invoke(projectId: Int): Project? {
         return repository.getById(projectId)
     }
 
