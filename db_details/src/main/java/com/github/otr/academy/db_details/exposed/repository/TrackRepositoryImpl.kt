@@ -33,16 +33,11 @@ internal class TrackRepositoryImpl @Inject constructor(
         tracksToProjectsTable
     )
 
-    override fun save(entity: Track): Track {
+    override fun save(entity: Track) {
         transaction {
             tracksTable.insert { mapTrackToRow(it, entity) }
         }
         // FIXME: SELECT FROM TABLE
-        return entity
-    }
-
-    fun saveAll(entities: List<Track>) {
-        TODO("Not yet implemented")
     }
 
     override fun getById(id: Int): Track? {
@@ -51,6 +46,10 @@ internal class TrackRepositoryImpl @Inject constructor(
                 .map { it.mapRowToTrack() }
                 .singleOrNull()
         }
+    }
+
+    override fun saveAll(entities: List<Track>) {
+        TODO("Not yet implemented")
     }
 
     override fun deleteById(id: Int) {

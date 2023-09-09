@@ -8,6 +8,8 @@ import com.github.otr.academy.db_details.exposed.dbo.TracksTable.mapRowToTrack
 import com.github.otr.academy.db_details.exposed.dbo.parent_child.CategoriesToTracksTable
 
 import com.github.otr.academy.domain.model.Category
+import com.github.otr.academy.domain.model.Project
+import com.github.otr.academy.domain.model.Stage
 import com.github.otr.academy.domain.model.Track
 import com.github.otr.academy.domain.repository.GenericRepository
 
@@ -35,13 +37,13 @@ internal class CategoryRepositoryImpl @Inject constructor(
         tracksTable
     )
 
-    fun save(entity: Category) {
+    override fun save(entity: Category) {
         transaction {
             categoriesTable.insert { mapCategoryToRow(it, entity) }
         }
     }
 
-    fun saveAll(entities: List<Category>) {
+    override fun saveAll(entities: List<Category>) {
         TODO("Not yet implemented")
     }
 
@@ -51,6 +53,14 @@ internal class CategoryRepositoryImpl @Inject constructor(
                 .map { it.mapRowToCategory() }
                 .singleOrNull()
         }
+    }
+
+    override fun deleteById(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun update(entity: Category): Category {
+        TODO("Not yet implemented")
     }
 
     override fun getAll(): List<Category> {
@@ -78,6 +88,10 @@ internal class CategoryRepositoryImpl @Inject constructor(
                 .map { it.mapRowToTrack() }
         }
         return tracks
+    }
+
+    override fun getChildrenByParent(parent: Project): List<Stage> {
+        TODO("Not yet implemented")
     }
 
 }

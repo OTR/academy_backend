@@ -25,16 +25,15 @@ internal class TopicRepositoryImpl @Inject constructor(
     private val table: TopicsTable = TopicsTable
     private val database: Database = SQLiteDatabaseFactory().init(table)
 
-    override fun save(entity: Topic): Topic {
+    override fun save(entity: Topic) {
 
         transaction {
             table.insert { mapTopicToRow(it, entity) }
         }
         // FIXME: SELECT FROM TABLE
-        return entity
     }
 
-    fun saveAll(entities: List<Topic>) {
+    override fun saveAll(entities: List<Topic>) {
         TODO("Not yet implemented")
     }
 
