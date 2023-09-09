@@ -6,6 +6,10 @@ import com.github.otr.academy.domain.model.Project
  * Represents a response object for Use Case
  * of getting Projects for specific Track
  * these Projects divided by difficulty level
+ *
+ * This response object serve as a container to deliver all the information
+ * about `Track` -> `Project`s relationship to be rendered as HTML with help
+ * of template engine (e.g. Thymeleaf)
  */
 data class ProjectsByLevel(
     val easyProjects: List<Project>,

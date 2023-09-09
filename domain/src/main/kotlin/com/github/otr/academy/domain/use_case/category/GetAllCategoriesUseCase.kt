@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.Category
 import com.github.otr.academy.domain.repository.CategoryRepository
 
 /**
- *
+ * Return all the existing `Category` objects from repository
  */
 class GetAllCategoriesUseCase(
     private val repository: CategoryRepository
