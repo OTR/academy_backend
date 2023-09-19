@@ -25,15 +25,14 @@ class ProjectRepositoryImpl @Inject constructor(
     private val table: ProjectsTable = ProjectsTable
     private val database: Database = SQLiteDatabaseFactory().init(table)
 
-    override fun save(entity: Project): Project {
+    override fun save(entity: Project) {
         transaction {
             table.insert { mapProjectToRow(it, entity) }
         }
         // FIXME: select from table
-        return entity
     }
 
-    fun saveAll(entities: List<Project>) {
+    override fun saveAll(entities: List<Project>) {
         TODO("Not yet implemented")
     }
 

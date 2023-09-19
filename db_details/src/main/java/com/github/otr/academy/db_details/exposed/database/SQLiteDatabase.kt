@@ -11,6 +11,8 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import java.sql.Connection
 
 /**
+ * Class that used for Exposed related SQLite database instance initialization
+ *
  * For in-memory database use the following url
  * "jdbc:sqlite:file:test?mode=memory&cache=shared"
  */

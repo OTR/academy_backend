@@ -7,7 +7,12 @@ import kotlin.io.path.Path
 import kotlin.io.path.absolutePathString
 
 /**
- *
+ * This class holds String constants, relative paths to resources
+ * and filenames that would be used for database file etc
+ * `RESOURCES_PATH` - path to folder that holds Java application resources
+ * `APP_DATA_PATH` - path to folder that holds collected data, large files, ...
+ * `PATH_TO_CONFIG_FILE` - Java Properties file that holds sensitive settings
+ *                          usually project (instance) dependent
  */
 internal object Config {
 
@@ -27,7 +32,8 @@ internal object Config {
     }
 
     /**
-     *
+     * Return Absolute Path to Database that holds (or would hold) all the data
+     * collected during application run
      */
     fun getPathToDatabase(): String {
         val absolutePath: String = Path(APP_DATA_PATH)

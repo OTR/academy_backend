@@ -25,14 +25,13 @@ class AttemptRepositoryImpl @Inject constructor(
     private val table: AttemptsTable = AttemptsTable
     private val database: Database = SQLiteDatabaseFactory().init(table)
 
-    fun save(entity: Attempt) {
-
+    override fun save(entity: Attempt) {
         transaction {
             table.insert { mapAttemptToRow(it, entity) }
         }
     }
 
-    fun saveAll(entities: List<Attempt>) {
+    override fun saveAll(entities: List<Attempt>) {
         TODO("Not yet implemented")
     }
 
@@ -49,10 +48,6 @@ class AttemptRepositoryImpl @Inject constructor(
     }
 
     override fun update(entity: Attempt): Attempt {
-        TODO("Not yet implemented")
-    }
-
-    override fun save(entity: Attempt): Attempt {
         TODO("Not yet implemented")
     }
 

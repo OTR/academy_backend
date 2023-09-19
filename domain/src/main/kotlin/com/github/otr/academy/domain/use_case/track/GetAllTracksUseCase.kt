@@ -4,7 +4,7 @@ import com.github.otr.academy.domain.model.Track
 import com.github.otr.academy.domain.repository.TrackRepository
 
 /**
- *
+ * Return all existing `Track` objects?
  */
 class GetAllTracksUseCase(
     private val repository: TrackRepository

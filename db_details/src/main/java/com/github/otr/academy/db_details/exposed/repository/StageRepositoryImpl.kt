@@ -5,6 +5,7 @@ import com.github.otr.academy.db_details.exposed.dbo.StagesTable
 import com.github.otr.academy.db_details.exposed.dbo.StagesTable.mapRowToStage
 import com.github.otr.academy.db_details.exposed.dbo.StagesTable.stageId
 import com.github.otr.academy.db_details.exposed.dbo.StagesTable.stageProject
+
 import com.github.otr.academy.domain.model.Project
 import com.github.otr.academy.domain.model.Stage
 import com.github.otr.academy.domain.repository.GenericRepository

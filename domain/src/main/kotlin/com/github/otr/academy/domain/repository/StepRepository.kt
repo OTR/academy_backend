@@ -3,7 +3,8 @@ package com.github.otr.academy.domain.repository
 import com.github.otr.academy.domain.model.Step
 
 /**
- * TODO:
+ * If it's `theory` step, it is usually has a few `practice` steps
+ * belong to it
  */
 interface StepRepository : GenericRepository<Step> {
 
